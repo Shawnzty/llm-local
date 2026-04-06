@@ -13,11 +13,11 @@ Estimation uses a conservative 4-bit quantization baseline with 8K context and s
 
 ## Tech stack
 
-- Next.js 16 (App Router)
-- TypeScript
-- Tailwind CSS v4
-- Vitest for tests
-- No database — local seed data files
+- **Monorepo**: pnpm workspaces
+- **Frontend (`apps/web`)**: Next.js 16 (App Router, Server Components + ISR), TypeScript, Tailwind CSS v4
+- **Backend (`apps/api`)**: Hono (Node), Drizzle ORM, Postgres, tsx runtime
+- **Shared (`packages/shared`)**: Estimation engine, types, seed data — consumed by both apps
+- **Tests**: Vitest
 
 ## Data sources
 
@@ -50,29 +50,66 @@ Summary:
 
 ## Running locally
 
+Requires Node 20+ and pnpm 10+.
+
 ```bash
-npm install
-npm run dev
+pnpm install
+
+# frontend only (uses bundled seed data when NEXT_PUBLIC_API_URL is unset)
+pnpm dev:web
+
+# backend only (requires DATABASE_URL for DB-backed reads; falls back to bundled data otherwise)
+pnpm dev:api
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000). The API runs on `http://localhost:4000`.
 
-## Tests
+Environment:
+- `apps/web/.env.local`: `NEXT_PUBLIC_API_URL=http://localhost:4000`
+- `apps/api/.env`: `DATABASE_URL=postgres://…`, `CORS_ORIGIN=http://localhost:3000`
+
+## Tests and build
 
 ```bash
-npx vitest run
+pnpm test           # all packages
+pnpm build          # all packages
+pnpm build:web      # Next.js production build
+pnpm build:api      # typecheck the API
+```
+
+## Database (backend)
+
+```bash
+pnpm --filter @llm-local/api db:generate   # create migration from schema
+pnpm --filter @llm-local/api db:migrate    # apply migrations
+pnpm --filter @llm-local/api db:seed       # seed from bundled data
+pnpm --filter @llm-local/api job:refresh   # run the data refresh job
 ```
 
 ## Project structure
 
 ```
-src/
-  app/                    # Next.js pages (home, /estimate, /compatibility)
-  components/             # UI components
-  lib/
-    estimation/           # VRAM estimation engine and constants
-    data/                 # Seed data (models, GPUs)
-    types.ts              # TypeScript interfaces
-    utils.ts              # Lookup and formatting helpers
-  __tests__/              # Vitest tests
+apps/
+  web/                    # Next.js frontend (Server Components + ISR)
+    src/app/              # Pages: /, /estimate, /compatibility
+    src/components/       # UI components + client islands
+    src/lib/api.ts        # Server-side fetch w/ fallback to bundled data
+    src/lib/utils.ts      # Formatters
+  api/                    # Hono backend
+    src/index.ts          # HTTP entrypoint
+    src/routes/           # /health, /models, /gpus
+    src/db/               # Drizzle schema, client, queries, seed
+    src/jobs/             # refresh-data.ts cron job
+packages/
+  shared/                 # @llm-local/shared
+    src/types.ts          # Domain types
+    src/estimation/       # VRAM engine + constants (heart of product)
+    src/data/             # Bundled seed data (models, GPUs)
+    src/lookups.ts        # Helper lookups on seed arrays
 ```
+
+## Deployment
+
+- Frontend → Vercel (`apps/web`); set `NEXT_PUBLIC_API_URL` to the Railway API URL
+- Backend → Railway (`apps/api`); attach Postgres, run `db:migrate` + `db:seed` on first deploy, schedule `job:refresh` via Railway cron
+- DNS → Cloudflare (DNS-only records, no proxy): `llm-local.com` → Vercel, `api.llm-local.com` → Railway

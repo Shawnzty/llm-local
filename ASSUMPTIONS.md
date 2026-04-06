@@ -72,7 +72,7 @@ The compatibility check compares estimated VRAM against available GPU VRAM:
 | **Maybe** | Estimated ≤ 100% of available | Tight fit; may work with careful configuration |
 | **No** | Estimated > 100% of available | Insufficient VRAM |
 
-These thresholds are configurable in `src/lib/estimation/constants.ts`.
+These thresholds are configurable in `packages/shared/src/estimation/constants.ts`.
 
 The 80% "yes" threshold provides a practical safety margin for:
 - Allocator caching behavior (PyTorch/CUDA reserve memory pools)
@@ -90,3 +90,9 @@ The 80% "yes" threshold provides a practical safety margin for:
 ## Source
 
 Estimation logic is derived from a comprehensive research report analyzing inference memory requirements across model architectures, quantization formats, and runtime stacks. The report is included in the repository as `deep-research-report.md`.
+
+## Data refresh job
+
+`apps/api/src/jobs/refresh-data.ts` is the scheduled cron that keeps model / GPU metadata up to date in Postgres.
+
+For V1.5, this job re-upserts the bundled seed data from `@llm-local/shared` and bumps `last_updated` timestamps. It exists primarily to prove the Railway cron infrastructure end-to-end. Real upstream fetchers (Ollama catalog, Artificial Analysis leaderboard, NVIDIA spec pages) will replace the placeholder body in a later version — the surrounding schema, fallback behavior, and deployment wiring will not change.
