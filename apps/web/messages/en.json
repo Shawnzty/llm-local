@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "LLM Local — Local LLM Machines",
+    "description": "High-performance local LLM inference machines. Your data, your hardware, your control."
+  },
+  "nav": {
+    "home": "Home",
+    "machines": "Machines",
+    "estimate": "VRAM Calculator",
+    "compatibility": "Compatibility",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "Run LLMs on your own hardware.",
+    "subheadline": "Purpose-built machines for local AI inference. No cloud dependency, no API fees, complete privacy.",
+    "cta": "View Machines"
+  },
+  "machines": {
+    "title": "Machines",
+    "featured": "Featured",
+    "allMachines": "All Machines",
+    "viewDetails": "View Details",
+    "inquire": "Inquire",
+    "specs": "Specifications",
+    "compatibleModels": "Compatible Models",
+    "gpuConfig": "GPU Configuration",
+    "cpu": "CPU",
+    "ram": "Memory",
+    "storage": "Storage",
+    "price": "Price",
+    "available": "In Stock",
+    "soldOut": "Sold Out",
+    "estimatedVram": "Estimated VRAM Usage",
+    "maxContext": "Max Context",
+    "verdict": {
+      "yes": "Runs comfortably",
+      "maybe": "Runs with tight headroom",
+      "no": "Insufficient VRAM"
+    }
+  },
+  "estimate": {
+    "title": "How much VRAM do I need?",
+    "description": "Estimates based on 4-bit quantization, 8K context, single-user, NVIDIA GPU.",
+    "back": "Back",
+    "maxContext": "Max context",
+    "intelligenceScore": "Intelligence score",
+    "external": "(external)",
+    "estimatedVram": "Estimated VRAM",
+    "disclaimer": "Based on 4-bit quantization, 8K context, single-user, NVIDIA GPU."
+  },
+  "compatibility": {
+    "title": "Can this model run on my GPU?",
+    "back": "Back",
+    "estimatedNeed": "Estimated VRAM need",
+    "availableVram": "Available VRAM",
+    "disclaimer": "Based on 4-bit quantization, 8K context, single-user, NVIDIA GPU."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Questions, quotes, or custom builds — we'd love to hear from you.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "company": "Company (optional)",
+    "machine": "Machine of Interest",
+    "selectMachine": "Select a machine",
+    "message": "Message",
+    "submit": "Send",
+    "sending": "Sending...",
+    "success": "Thank you for your inquiry. We'll get back to you shortly.",
+    "error": "Failed to send. Please try again."
+  },
+  "whyLocal": {
+    "title": "Why Local LLM?",
+    "privacy": {
+      "title": "Complete Privacy",
+      "description": "Your data never leaves your premises. Process sensitive information with confidence."
+    },
+    "cost": {
+      "title": "No Recurring Costs",
+      "description": "No per-token API fees. Buy once, run inference unlimited times."
+    },
+    "latency": {
+      "title": "Ultra-Low Latency",
+      "description": "Zero network delay. Ideal for real-time applications."
+    },
+    "control": {
+      "title": "Full Control",
+      "description": "Choose your model, quantization, context length — customize everything."
+    }
+  },
+  "footer": {
+    "tagline": "Your dedicated AI inference machine",
+    "copyright": "© {year} LLM Local"
+  },
+  "common": {
+    "back": "Back",
+    "model": "Model",
+    "size": "Size",
+    "gpu": "GPU",
+    "selectModel": "Select model family",
+    "selectSize": "Select size",
+    "selectModelFirst": "Select model first",
+    "selectGpu": "Select GPU"
+  }
+}

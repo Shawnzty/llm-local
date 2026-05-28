@@ -34,5 +34,14 @@ export const HEADROOM_FACTOR = 0.10;
 export const COMPAT_YES_THRESHOLD = 0.80;
 export const COMPAT_MAYBE_THRESHOLD = 1.00;
 
+// --- Multi-GPU tensor parallelism overhead ---
+// Communication cost increases with GPU count (NVLink/PCIe overhead)
+export const MULTI_GPU_OVERHEAD: Record<number, number> = {
+  1: 0,
+  2: 0.10,
+  4: 0.15,
+  8: 0.20,
+};
+
 // --- Unit conversion ---
 export const BYTES_PER_GIB = 1024 ** 3;

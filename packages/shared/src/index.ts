@@ -1,6 +1,8 @@
 export * from './types';
 export * from './estimation/constants';
 export * from './estimation/engine';
+export * from './estimation/multi-gpu';
 export { MODEL_FAMILIES } from './data/models';
 export { GPU_PROFILES } from './data/gpus';
+export { MACHINES } from './data/machines';
 export * from './lookups';

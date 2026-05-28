@@ -1,15 +1,16 @@
 # LLM Local
 
-VRAM estimation tool for local LLM deployment. Helps you figure out how much GPU memory you need and whether a specific model will run on your hardware.
+Sales-oriented multilingual website for pre-built local LLM inference machines. Each machine page shows which AI models it can run, powered by a VRAM compatibility engine.
 
-## Current scope (V1)
+## Current scope (V2)
 
-Two modes:
+- **Machine catalog**: Pre-built LLM machines with single & multi-GPU configs
+- **Compatibility matrix**: Per-machine breakdown of which models fit (yes / maybe / no)
+- **Multilingual**: Japanese (default), English, Simplified Chinese
+- **VRAM tools**: Estimator and GPU compatibility checker (SEO / free traffic)
+- **Inquiry form**: Quote request flow (no payment processing)
 
-1. **VRAM Estimator** — Select a model family and size, get the estimated VRAM requirement.
-2. **Compatibility Check** — Select a model and GPU, see whether it fits (yes / maybe / no).
-
-Estimation uses a conservative 4-bit quantization baseline with 8K context and single-user assumptions. NVIDIA discrete GPUs only for V1.
+Market: Japan-first, expanding overseas. Commerce: inquiry-based.
 
 ## Tech stack
 

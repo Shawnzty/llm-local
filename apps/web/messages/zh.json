@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "LLM Local — 本地大模型主机",
+    "description": "高性能本地大模型推理主机。数据在你手中，隐私由你掌控。"
+  },
+  "nav": {
+    "home": "首页",
+    "machines": "机型列表",
+    "estimate": "VRAM计算",
+    "compatibility": "兼容性检查",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "headline": "在自己的硬件上运行大模型。",
+    "subheadline": "为本地AI推理打造的专用主机。无需依赖云服务，无API费用，完全隐私。",
+    "cta": "查看机型"
+  },
+  "machines": {
+    "title": "机型列表",
+    "featured": "推荐",
+    "allMachines": "全部机型",
+    "viewDetails": "查看详情",
+    "inquire": "咨询",
+    "specs": "规格",
+    "compatibleModels": "兼容模型",
+    "gpuConfig": "GPU配置",
+    "cpu": "处理器",
+    "ram": "内存",
+    "storage": "存储",
+    "price": "价格",
+    "available": "有货",
+    "soldOut": "已售罄",
+    "estimatedVram": "预估VRAM用量",
+    "maxContext": "最大上下文",
+    "verdict": {
+      "yes": "流畅运行",
+      "maybe": "可运行（余量较小）",
+      "no": "VRAM不足"
+    }
+  },
+  "estimate": {
+    "title": "需要多少VRAM？",
+    "description": "基于4-bit量化、8K上下文、单用户、NVIDIA GPU的估算。",
+    "back": "返回",
+    "maxContext": "最大上下文",
+    "intelligenceScore": "智能评分",
+    "external": "（外部数据）",
+    "estimatedVram": "预估VRAM",
+    "disclaimer": "基于4-bit量化、8K上下文、单用户、NVIDIA GPU。"
+  },
+  "compatibility": {
+    "title": "这个模型能在我的GPU上运行吗？",
+    "back": "返回",
+    "estimatedNeed": "预估VRAM需求",
+    "availableVram": "可用VRAM",
+    "disclaimer": "基于4-bit量化、8K上下文、单用户、NVIDIA GPU。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "咨询、报价或定制需求，欢迎联系。",
+    "name": "姓名",
+    "email": "邮箱",
+    "phone": "电话（选填）",
+    "company": "公司名（选填）",
+    "machine": "感兴趣的机型",
+    "selectMachine": "选择机型",
+    "message": "留言",
+    "submit": "发送",
+    "sending": "发送中...",
+    "success": "感谢您的咨询，我们会尽快回复。",
+    "error": "发送失败，请重试。"
+  },
+  "whyLocal": {
+    "title": "为什么选择本地大模型",
+    "privacy": {
+      "title": "完全隐私",
+      "description": "数据不离开本地。机密信息也可以放心处理。"
+    },
+    "cost": {
+      "title": "无持续费用",
+      "description": "没有按Token计费的API费用。一次购买，无限推理。"
+    },
+    "latency": {
+      "title": "超低延迟",
+      "description": "零网络延迟。适合实时应用场景。"
+    },
+    "control": {
+      "title": "完全掌控",
+      "description": "模型选择、量化方式、上下文长度，一切自定义。"
+    }
+  },
+  "footer": {
+    "tagline": "专属于你的AI推理主机",
+    "copyright": "© {year} LLM Local"
+  },
+  "common": {
+    "back": "返回",
+    "model": "模型",
+    "size": "大小",
+    "gpu": "GPU",
+    "selectModel": "选择模型系列",
+    "selectSize": "选择大小",
+    "selectModelFirst": "请先选择模型",
+    "selectGpu": "选择GPU"
+  }
+}

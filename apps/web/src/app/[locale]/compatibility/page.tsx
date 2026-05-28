@@ -1,27 +1,34 @@
 import Link from 'next/link';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { CompatibilityClient } from '@/components/CompatibilityClient';
-import { fetchFamilies, fetchGpus } from '@/lib/api';
+import { MODEL_FAMILIES, GPU_PROFILES } from '@llm-local/shared';
 
 export const revalidate = 3600;
 
-export default async function CompatibilityPage() {
-  const [families, gpus] = await Promise.all([fetchFamilies(), fetchGpus()]);
+export default async function CompatibilityPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('compatibility');
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-12 sm:py-16">
       <div className="mb-10">
         <Link
-          href="/"
+          href={`/${locale}`}
           className="text-sm text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
         >
-          &larr; Back
+          &larr; {t('back')}
         </Link>
         <h1 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mt-4">
-          Can this model run on my GPU?
+          {t('title')}
         </h1>
       </div>
 
-      <CompatibilityClient families={families} gpus={gpus} />
+      <CompatibilityClient families={MODEL_FAMILIES} gpus={GPU_PROFILES} />
     </div>
   );
 }

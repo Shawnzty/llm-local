@@ -43,3 +43,39 @@ export interface CompatibilityResult {
   availableVramGB: number;
   verdict: 'yes' | 'maybe' | 'no';
 }
+
+// --- V2: Machine catalog ---
+
+export type Locale = 'ja' | 'en' | 'zh';
+
+export interface MachineGpu {
+  gpuId: string;
+  count: number;
+}
+
+export interface Machine {
+  id: string;
+  slug: string;
+  name: Record<Locale, string>;
+  tagline: Record<Locale, string>;
+  description: Record<Locale, string>;
+  gpus: MachineGpu[];
+  cpu: string;
+  ramGB: number;
+  storage: string;
+  priceDisplay: Record<Locale, string>;
+  images: string[];
+  featured: boolean;
+  available: boolean;
+  specs: Record<string, string>;
+}
+
+export interface MachineCompatibility {
+  variant: ModelVariant;
+  totalVramAvailableGB: number;
+  estimatedVramGB: number;
+  perGpuUsageGB: number;
+  perGpuAvailableGB: number;
+  gpuCount: number;
+  verdict: 'yes' | 'maybe' | 'no';
+}

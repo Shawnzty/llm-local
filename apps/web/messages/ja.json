@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "LLM Local — ローカルLLMマシン",
+    "description": "高性能ローカルLLM推論マシン。あなたのデータを、あなたの手元で。"
+  },
+  "nav": {
+    "home": "ホーム",
+    "machines": "マシン一覧",
+    "estimate": "VRAM計算",
+    "compatibility": "互換性チェック",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "headline": "ローカルLLM、はじめませんか。",
+    "subheadline": "クラウドに頼らず、あなた専用のAI推論マシンを。データもモデルも、すべて手元で管理。",
+    "cta": "マシンを見る"
+  },
+  "machines": {
+    "title": "マシン一覧",
+    "featured": "おすすめ",
+    "allMachines": "すべてのマシン",
+    "viewDetails": "詳細を見る",
+    "inquire": "お問い合わせ",
+    "specs": "スペック",
+    "compatibleModels": "対応モデル",
+    "gpuConfig": "GPU構成",
+    "cpu": "CPU",
+    "ram": "メモリ",
+    "storage": "ストレージ",
+    "price": "価格",
+    "available": "在庫あり",
+    "soldOut": "売り切れ",
+    "estimatedVram": "推定VRAM使用量",
+    "maxContext": "最大コンテキスト",
+    "verdict": {
+      "yes": "快適に動作",
+      "maybe": "動作可能（余裕少）",
+      "no": "VRAM不足"
+    }
+  },
+  "estimate": {
+    "title": "必要なVRAMは？",
+    "description": "4-bit量子化、8Kコンテキスト、シングルユーザー、NVIDIA GPUを前提とした推定値です。",
+    "back": "戻る",
+    "maxContext": "最大コンテキスト",
+    "intelligenceScore": "知性スコア",
+    "external": "（外部データ）",
+    "estimatedVram": "推定VRAM",
+    "disclaimer": "4-bit量子化、8Kコンテキスト、シングルユーザー、NVIDIA GPUを前提。"
+  },
+  "compatibility": {
+    "title": "このモデルは動く？",
+    "back": "戻る",
+    "estimatedNeed": "推定VRAM必要量",
+    "availableVram": "利用可能VRAM",
+    "disclaimer": "4-bit量子化、8Kコンテキスト、シングルユーザー、NVIDIA GPUを前提。"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "ご質問・お見積りなど、お気軽にご連絡ください。",
+    "name": "お名前",
+    "email": "メールアドレス",
+    "phone": "電話番号（任意）",
+    "company": "会社名（任意）",
+    "machine": "ご興味のあるマシン",
+    "selectMachine": "マシンを選択",
+    "message": "メッセージ",
+    "submit": "送信",
+    "sending": "送信中...",
+    "success": "お問い合わせありがとうございます。折り返しご連絡いたします。",
+    "error": "送信に失敗しました。もう一度お試しください。"
+  },
+  "whyLocal": {
+    "title": "なぜローカルLLMか",
+    "privacy": {
+      "title": "完全なプライバシー",
+      "description": "データは外部に送信されません。機密情報も安心して処理できます。"
+    },
+    "cost": {
+      "title": "ランニングコスト不要",
+      "description": "API従量課金なし。一度購入すれば、何度でも推論可能。"
+    },
+    "latency": {
+      "title": "超低レイテンシ",
+      "description": "ネットワーク遅延ゼロ。リアルタイムアプリケーションに最適。"
+    },
+    "control": {
+      "title": "完全なコントロール",
+      "description": "モデル選択、量子化、コンテキスト長、すべてカスタマイズ可能。"
+    }
+  },
+  "footer": {
+    "tagline": "あなた専用のAI推論マシン",
+    "copyright": "© {year} LLM Local"
+  },
+  "common": {
+    "back": "戻る",
+    "model": "モデル",
+    "size": "サイズ",
+    "gpu": "GPU",
+    "selectModel": "モデルファミリーを選択",
+    "selectSize": "サイズを選択",
+    "selectModelFirst": "モデルを先に選択",
+    "selectGpu": "GPUを選択"
+  }
+}
