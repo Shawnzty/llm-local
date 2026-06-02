@@ -117,9 +117,9 @@ export function InquiryForm() {
           className={`${inputClass} appearance-none cursor-pointer`}
         >
           <option value="">{t('selectMachine')}</option>
-          {MACHINES.filter((m) => m.available).map((m) => (
+          {MACHINES.filter((m) => m.status === 'active').map((m) => (
             <option key={m.id} value={m.id}>
-              {m.name[locale]}
+              {m.name}
             </option>
           ))}
         </select>

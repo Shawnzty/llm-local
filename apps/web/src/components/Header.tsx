@@ -8,6 +8,7 @@ import { LocaleSwitcher } from './LocaleSwitcher';
 export function Header() {
   const locale = useLocale();
   const t = useTranslations('nav');
+  const tb = useTranslations();
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200/60 dark:border-gray-800/60 bg-gray-50/80 dark:bg-gray-950/80 backdrop-blur-xl">
@@ -17,7 +18,7 @@ export function Header() {
             href={`/${locale}`}
             className="text-[15px] font-semibold tracking-tight text-gray-900 dark:text-gray-100 hover:opacity-70 transition-opacity"
           >
-            LLM Local
+            {tb('brand')}
           </Link>
           <nav className="hidden sm:flex items-center gap-4">
             <Link

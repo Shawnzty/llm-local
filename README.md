@@ -1,16 +1,17 @@
 # LLM Local
 
-Sales-oriented multilingual website for pre-built local LLM inference machines. Each machine page shows which AI models it can run, powered by a VRAM compatibility engine.
+Sales-oriented bilingual website for pre-built local LLM inference machines (NVIDIA Tesla V100). Each machine page shows vendor-measured performance and which models it can run.
 
 ## Current scope (V2)
 
-- **Machine catalog**: Pre-built LLM machines with single & multi-GPU configs
-- **Compatibility matrix**: Per-machine breakdown of which models fit (yes / maybe / no)
-- **Multilingual**: Japanese (default), English, Simplified Chinese
-- **VRAM tools**: Estimator and GPU compatibility checker (SEO / free traffic)
+- **Machine catalog**: 9 pre-built Tesla V100 machines (entry / mid / flagship tiers, single- and multi-GPU)
+- **Per-machine sales data**: Vendor-measured performance (tokens/sec), "what it can run", value props, badges, warranty/PSE
+- **Competitor comparison**: Market-anchor table (RTX 5060 Ti / 5090 / Applied / Mac Studio) positioning the lineup at 32GB+ VRAM
+- **Bilingual**: Japanese (default, ¥JPY), English ($USD)
+- **VRAM tools**: Estimator and GPU compatibility checker (SEO / free traffic, decoupled from the catalog)
 - **Inquiry form**: Quote request flow (no payment processing)
 
-Market: Japan-first, expanding overseas. Commerce: inquiry-based.
+Market: Japan-first, expanding overseas. Commerce: inquiry-based. Catalog is maintained as TypeScript in `packages/shared/src/data/`.
 
 ## Tech stack
 

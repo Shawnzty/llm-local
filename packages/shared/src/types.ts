@@ -44,38 +44,91 @@ export interface CompatibilityResult {
   verdict: 'yes' | 'maybe' | 'no';
 }
 
-// --- V2: Machine catalog ---
+// --- V2: Machine catalog (sales) ---
 
-export type Locale = 'ja' | 'en' | 'zh';
+export type Locale = 'ja' | 'en';
+export type Currency = 'JPY' | 'USD';
+export type Tier = 'entry' | 'mid' | 'flagship';
+
+export type LocalizedText = Record<Locale, string>;
+export type LocalizedList = Record<Locale, string[]>;
 
 export interface MachineGpu {
-  gpuId: string;
+  model: string; // e.g. "NVIDIA Tesla V100 PCIe"
+  memoryType: string; // e.g. "HBM2"
   count: number;
+  configLabel: string; // e.g. "32GB×1 + 16GB×2"
+  vramTotalGB: number;
+}
+
+export interface MachineCpu {
+  model: string;
+  cores: number;
+  threads: number;
+}
+
+export interface MachineRam {
+  sizeGB: number;
+  type: string;
+}
+
+export interface MachineStorage {
+  label: string;
+  type: string;
+}
+
+export interface MachinePsu {
+  wattage: number;
+  rating: string;
+  pseCertified: boolean;
+  note?: LocalizedText;
+}
+
+export interface MachinePerformance {
+  model: string; // e.g. "70B"
+  quant: string; // e.g. "Q4"
+  tokensPerSec: number | null; // null = not yet measured
+  note?: LocalizedText;
 }
 
 export interface Machine {
   id: string;
+  rank: number;
   slug: string;
-  name: Record<Locale, string>;
-  tagline: Record<Locale, string>;
-  description: Record<Locale, string>;
-  gpus: MachineGpu[];
-  cpu: string;
-  ramGB: number;
-  storage: string;
-  priceDisplay: Record<Locale, string>;
-  images: string[];
+  tier: Tier;
   featured: boolean;
-  available: boolean;
-  specs: Record<string, string>;
+  status: 'active' | 'inactive';
+  name: string; // short model code, not translated (e.g. "V100 64G Plus")
+  category: LocalizedText;
+  tagline: LocalizedText;
+  prices: Record<Currency, number>;
+  priceLabels: Record<Currency, string>;
+  vramGB: number;
+  gpu: MachineGpu;
+  cpu: MachineCpu;
+  motherboard: LocalizedText;
+  ram: MachineRam;
+  storage: MachineStorage;
+  psu: MachinePsu;
+  chassis: LocalizedText;
+  cooling: LocalizedText;
+  performance: MachinePerformance[];
+  canRun: LocalizedList;
+  bestFor: LocalizedList;
+  valueProps: LocalizedList;
+  badges: LocalizedList;
+  warranty: LocalizedText;
+  disclaimers: LocalizedText[];
 }
 
-export interface MachineCompatibility {
-  variant: ModelVariant;
-  totalVramAvailableGB: number;
-  estimatedVramGB: number;
-  perGpuUsageGB: number;
-  perGpuAvailableGB: number;
-  gpuCount: number;
-  verdict: 'yes' | 'maybe' | 'no';
+export interface MarketAnchor {
+  name: string;
+  vramGB: number;
+  approxJPY: number;
+  note: LocalizedText;
+}
+
+export interface TierInfo {
+  label: LocalizedText;
+  vram: string;
 }

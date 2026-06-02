@@ -1,8 +1,9 @@
 {
   "meta": {
-    "title": "LLM Local — ローカルLLMマシン",
-    "description": "高性能ローカルLLM推論マシン。あなたのデータを、あなたの手元で。"
+    "title": "LLMローカル — ローカルLLM推論マシン",
+    "description": "完成・テスト・1年保証済みのローカルLLM推論マシン。32GB〜128GB VRAMで、大規模モデルをあなたの手元で。"
   },
+  "brand": "LLMローカル",
   "nav": {
     "home": "ホーム",
     "machines": "マシン一覧",
@@ -12,31 +13,54 @@
   },
   "hero": {
     "headline": "ローカルLLM、はじめませんか。",
-    "subheadline": "クラウドに頼らず、あなた専用のAI推論マシンを。データもモデルも、すべて手元で管理。",
-    "cta": "マシンを見る"
+    "subheadline": "完成・テスト・PSE換装・1年保証済みの整機を、自作パーツとほぼ同額で。32GB〜128GBのVRAMで大規模モデルをあなたの手元に。",
+    "cta": "マシンを見る",
+    "valueProp": "完成・テスト・PSE換装・1年保証済みの整機を、自作パーツを買い揃える金額とほぼ同額で。"
   },
   "machines": {
     "title": "マシン一覧",
+    "subtitle": "用途とVRAMで選ぶ、ローカルLLM推論マシン。",
     "featured": "おすすめ",
     "allMachines": "すべてのマシン",
     "viewDetails": "詳細を見る",
-    "inquire": "お問い合わせ",
+    "inquire": "お問い合わせ・見積り",
     "specs": "スペック",
-    "compatibleModels": "対応モデル",
+    "performance": "実測パフォーマンス",
+    "perfPending": "実測値は近日公開予定です。",
+    "tokensPerSec": "トークン/秒",
+    "quant": "量子化",
+    "canRun": "動作可能なモデル",
+    "bestFor": "おすすめ用途",
+    "valueProps": "選ばれる理由",
     "gpuConfig": "GPU構成",
+    "gpuPlatform": "GPUプラットフォーム",
+    "memoryType": "メモリ種別",
     "cpu": "CPU",
+    "motherboard": "マザーボード",
     "ram": "メモリ",
     "storage": "ストレージ",
+    "psu": "電源",
+    "chassis": "ケース",
+    "cooling": "冷却",
+    "warranty": "保証",
+    "compliance": "コンプライアンス",
+    "vram": "VRAM",
+    "cores": "コア",
+    "threads": "スレッド",
     "price": "価格",
-    "available": "在庫あり",
-    "soldOut": "売り切れ",
-    "estimatedVram": "推定VRAM使用量",
-    "maxContext": "最大コンテキスト",
-    "verdict": {
-      "yes": "快適に動作",
-      "maybe": "動作可能（余裕少）",
-      "no": "VRAM不足"
-    }
+    "from": "",
+    "back": "マシン一覧に戻る"
+  },
+  "comparison": {
+    "title": "他の選択肢との比較",
+    "subtitle": "32GB以上のVRAMで、コストパフォーマンスを追求しました。",
+    "product": "製品",
+    "vram": "VRAM",
+    "approxPrice": "参考価格",
+    "note": "備考",
+    "ourLineup": "当社ラインナップ",
+    "ourRange": "¥448,000〜¥1,398,000",
+    "ourNote": "32GB〜128GB VRAM・完成/テスト/1年保証済み"
   },
   "estimate": {
     "title": "必要なVRAMは？",
@@ -90,8 +114,8 @@
     }
   },
   "footer": {
-    "tagline": "あなた専用のAI推論マシン",
-    "copyright": "© {year} LLM Local"
+    "tagline": "ローカルLLM推論を、誰でも手の届く価格で。",
+    "copyright": "© {year} LLMローカル"
   },
   "common": {
     "back": "戻る",

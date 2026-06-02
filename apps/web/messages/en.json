@@ -1,8 +1,9 @@
 {
   "meta": {
-    "title": "LLM Local — Local LLM Machines",
-    "description": "High-performance local LLM inference machines. Your data, your hardware, your control."
+    "title": "LLM Local — Local LLM Inference Machines",
+    "description": "Assembled, tested, 1-year-warrantied local LLM inference machines. 32GB–128GB VRAM to run large models on your own hardware."
   },
+  "brand": "LLM Local",
   "nav": {
     "home": "Home",
     "machines": "Machines",
@@ -12,31 +13,54 @@
   },
   "hero": {
     "headline": "Run LLMs on your own hardware.",
-    "subheadline": "Purpose-built machines for local AI inference. No cloud dependency, no API fees, complete privacy.",
-    "cta": "View Machines"
+    "subheadline": "Fully assembled, tested, PSE-converted, 1-year-warrantied machines — for about the cost of DIY parts. 32GB to 128GB of VRAM for large models, on your desk.",
+    "cta": "View Machines",
+    "valueProp": "A fully assembled, tested, PSE-converted, 1-year-warrantied unit for about the cost of buying DIY parts in Japan."
   },
   "machines": {
     "title": "Machines",
+    "subtitle": "Pick by workload and VRAM — local LLM inference machines.",
     "featured": "Featured",
     "allMachines": "All Machines",
     "viewDetails": "View Details",
-    "inquire": "Inquire",
+    "inquire": "Inquire / Request a quote",
     "specs": "Specifications",
-    "compatibleModels": "Compatible Models",
+    "performance": "Measured performance",
+    "perfPending": "Benchmarks coming soon.",
+    "tokensPerSec": "tokens/sec",
+    "quant": "Quant",
+    "canRun": "What it can run",
+    "bestFor": "Best for",
+    "valueProps": "Why this machine",
     "gpuConfig": "GPU Configuration",
+    "gpuPlatform": "GPU Platform",
+    "memoryType": "Memory type",
     "cpu": "CPU",
+    "motherboard": "Motherboard",
     "ram": "Memory",
     "storage": "Storage",
+    "psu": "Power supply",
+    "chassis": "Chassis",
+    "cooling": "Cooling",
+    "warranty": "Warranty",
+    "compliance": "Compliance",
+    "vram": "VRAM",
+    "cores": "cores",
+    "threads": "threads",
     "price": "Price",
-    "available": "In Stock",
-    "soldOut": "Sold Out",
-    "estimatedVram": "Estimated VRAM Usage",
-    "maxContext": "Max Context",
-    "verdict": {
-      "yes": "Runs comfortably",
-      "maybe": "Runs with tight headroom",
-      "no": "Insufficient VRAM"
-    }
+    "from": "",
+    "back": "Back to machines"
+  },
+  "comparison": {
+    "title": "How we compare",
+    "subtitle": "We compete at 32GB+ VRAM, where price-performance matters most.",
+    "product": "Product",
+    "vram": "VRAM",
+    "approxPrice": "Approx. price",
+    "note": "Notes",
+    "ourLineup": "Our lineup",
+    "ourRange": "$2,890–$9,020",
+    "ourNote": "32GB–128GB VRAM · assembled / tested / 1-year warranty"
   },
   "estimate": {
     "title": "How much VRAM do I need?",
@@ -90,7 +114,7 @@
     }
   },
   "footer": {
-    "tagline": "Your dedicated AI inference machine",
+    "tagline": "Local LLM inference, at a price within everyone's reach.",
     "copyright": "© {year} LLM Local"
   },
   "common": {
