@@ -3,7 +3,6 @@
     "title": "LLM Local — Local LLM Inference Machines",
     "description": "Assembled, tested, 1-year-warrantied local LLM inference machines. 32GB–128GB VRAM to run large models on your own hardware."
   },
-  "brand": "LLM Local",
   "nav": {
     "home": "Home",
     "machines": "Machines",
@@ -112,10 +111,6 @@
       "title": "Full Control",
       "description": "Choose your model, quantization, context length — customize everything."
     }
-  },
-  "footer": {
-    "tagline": "Local LLM inference, at a price within everyone's reach.",
-    "copyright": "© {year} LLM Local"
   },
   "common": {
     "back": "Back",

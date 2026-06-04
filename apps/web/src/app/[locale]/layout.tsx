@@ -3,7 +3,9 @@ import { setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import type { Locale } from '@llm-local/shared';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -47,6 +49,7 @@ export default async function LocaleLayout({
           <ThemeProvider>
             <Header />
             <main className="flex-1">{children}</main>
+            <Footer locale={locale as Locale} />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

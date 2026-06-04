@@ -3,7 +3,6 @@
     "title": "LLMローカル — ローカルLLM推論マシン",
     "description": "完成・テスト・1年保証済みのローカルLLM推論マシン。32GB〜128GB VRAMで、大規模モデルをあなたの手元で。"
   },
-  "brand": "LLMローカル",
   "nav": {
     "home": "ホーム",
     "machines": "マシン一覧",
@@ -112,10 +111,6 @@
       "title": "完全なコントロール",
       "description": "モデル選択、量子化、コンテキスト長、すべてカスタマイズ可能。"
     }
-  },
-  "footer": {
-    "tagline": "ローカルLLM推論を、誰でも手の届く価格で。",
-    "copyright": "© {year} LLMローカル"
   },
   "common": {
     "back": "戻る",
