@@ -1,0 +1,1412 @@
+{
+  "_readme": {
+    "purpose": {
+      "ja": "EC サイト用 多言語商品データ(③–⑪ 9 SKU)。",
+      "en": "Multilingual product data for the EC site (③–⑪, 9 SKUs)."
+    },
+    "i18n": "翻訳が必要なフィールドは {ja,en} オブジェクト。フロントは field[locale] で取得。locale→currency: ja→JPY, en→USD。",
+    "maintenance": [
+      "価格変更: products[].prices.JPY を更新後、USD を再計算(meta.currencies.USD.perJPY ベース、または手動上書き)。",
+      "為替: meta.currencies.USD の rate を1箇所変更。",
+      "共有項目(保証/コンプラ/競合): shared.* を1箇所修正で全商品反映。",
+      "新規SKU: products[] に1要素追加(id/slug 一意)。画像は /images/products/{slug}/。",
+      "言語追加(将来 zh 等): 各 {ja,en} に対応キーを足し、meta.locales/localeCurrency/currencies を更新。",
+      "原価・粗利は非掲載(フロント露出のため)。内部数値は 03_最终定价.xlsx。"
+    ],
+    "fieldNotes": {
+      "performance.tokensPerSec": "メーカー(中国卖家)参考値。null=未計測(⑨⑩⑪)。要実測。",
+      "tier": "entry(③④)/mid(⑤⑥⑦⑧)/flagship(⑨⑩⑪)",
+      "name": "短い型番(通用コード、翻訳なし)。例: V100 64G Plus。",
+      "category": "商品タイプ(翻訳あり {ja,en})。ワークステーション / サーバー。"
+    }
+  },
+  "meta": {
+    "version": "2.2",
+    "lastUpdated": "2026-06-01",
+    "locales": [
+      "ja",
+      "en"
+    ],
+    "defaultLocale": "ja",
+    "localeCurrency": {
+      "ja": "JPY",
+      "en": "USD"
+    },
+    "currencies": {
+      "JPY": {
+        "symbol": "¥",
+        "code": "JPY",
+        "perJPY": 1,
+        "round": 1
+      },
+      "USD": {
+        "symbol": "$",
+        "code": "USD",
+        "perJPY": 0.006452,
+        "rateNote": "1USD≈¥155",
+        "round": 10
+      }
+    },
+    "lineup": "③–⑪ (9 SKU)。①② 廃止(16GB VRAM)。"
+  },
+  "brand": {
+    "name": {
+      "ja": "LLMローカル",
+      "en": "LLM Local"
+    },
+    "tagline": {
+      "ja": "ローカルLLM推論を、誰でも手の届く価格で。",
+      "en": "Local LLM inference, at a price within everyone's reach."
+    },
+    "supportEmail": "(TODO)"
+  },
+  "shared": {
+    "warranty": {
+      "text": {
+        "ja": "1年整機保証 + GPU専用保証",
+        "en": "1-year whole-unit warranty + dedicated GPU warranty"
+      },
+      "note": {
+        "ja": "GPUを含むため動作確認・整備の上出荷",
+        "en": "Tested before shipping including GPUs"
+      }
+    },
+    "compliance": {
+      "pse": {
+        "ja": "内蔵電源はPSE認証品(電気用品安全法 準拠)",
+        "en": "PSE-certified power supply unit in Japan (Electrical Appliances Safety Act)"
+      }
+    },
+    "gpuPlatform": {
+      "gpu": "NVIDIA Tesla V100 PCIe (Volta, HBM2)",
+      "note": {
+        "ja": "FP16/INT4量子化推論に最適。FP8/FP4非対応のため最新学習用途には非推奨。",
+        "en": "Best for FP16/INT4 quantized inference. No FP8/FP4, so not recommended for cutting-edge training."
+      }
+    },
+    "marketAnchors": [
+      {
+        "name": "RTX 5060 Ti 16GB",
+        "vramGB": 16,
+        "approxJPY": 85000,
+        "note": {
+          "ja": "16GBはコンシューマが安い→当社は32GB以上で勝負",
+          "en": "Consumers win at 16GB → we compete at 32GB+"
+        }
+      },
+      {
+        "name": "RTX 5090 32GB",
+        "vramGB": 32,
+        "approxJPY": 450000,
+        "note": {
+          "ja": "32GBの対抗。速いが高い・VRAMは頭打ち",
+          "en": "32GB rival. Faster but pricey, VRAM capped"
+        }
+      },
+      {
+        "name": "Applied CERVO/HPC (RTX PRO 6000 Blackwell)",
+        "vramGB": 192,
+        "approxJPY": 12911000,
+        "note": {
+          "ja": "エンタープライズ向け。当社の約9倍価格",
+          "en": "Enterprise-grade. ~9× our price"
+        }
+      },
+      {
+        "name": "Mac Studio M3 Ultra 512GB",
+        "vramGB": 512,
+        "approxJPY": 1000000,
+        "note": {
+          "ja": "統合メモリで大型可だが演算弱・MLX",
+          "en": "Big models via unified memory but weak compute / MLX"
+        }
+      }
+    ],
+    "valuePropGlobal": {
+      "ja": "完成・テスト・PSE換装・1年保証済みの整機を、自作パーツを買い揃える金額とほぼ同額で。",
+      "en": "A fully assembled, tested, PSE-converted, 1-year-warrantied unit for about the cost of buying DIY parts in Japan."
+    }
+  },
+  "tiers": {
+    "entry": {
+      "label": {
+        "ja": "エントリー",
+        "en": "Entry"
+      },
+      "vram": "32–48GB",
+      "skus": [
+        "sku-03",
+        "sku-04"
+      ]
+    },
+    "mid": {
+      "label": {
+        "ja": "ミドル",
+        "en": "Mid-range"
+      },
+      "vram": "64–96GB",
+      "skus": [
+        "sku-05",
+        "sku-06",
+        "sku-07",
+        "sku-08"
+      ]
+    },
+    "flagship": {
+      "label": {
+        "ja": "フラッグシップ",
+        "en": "Flagship"
+      },
+      "vram": "128GB",
+      "skus": [
+        "sku-09",
+        "sku-10",
+        "sku-11"
+      ]
+    }
+  },
+  "products": [
+    {
+      "id": "sku-03",
+      "rank": 3,
+      "label": "③",
+      "slug": "v100-dual-32g",
+      "tier": "entry",
+      "featured": false,
+      "status": "active",
+      "name": "V100 32G",
+      "category": {
+        "ja": "ローカルLLM推論ワークステーション",
+        "en": "Local LLM Inference Workstation"
+      },
+      "tagline": {
+        "ja": "最安クラスの 32GB VRAM。32B モデルを快適にローカル推論。",
+        "en": "Entry-class 32GB VRAM. Run 32B models locally with ease."
+      },
+      "prices": {
+        "JPY": 448000,
+        "USD": 2890
+      },
+      "priceLabels": {
+        "JPY": "¥448,000",
+        "USD": "$2,890"
+      },
+      "vramGB": 32,
+      "gpu": {
+        "model": "NVIDIA Tesla V100 PCIe",
+        "memoryType": "HBM2",
+        "count": 2,
+        "configLabel": "16GB×2",
+        "vramTotalGB": 32
+      },
+      "cpu": {
+        "model": "Intel Xeon E5-2696 V4",
+        "cores": 22,
+        "threads": 44
+      },
+      "motherboard": {
+        "ja": "X99 サーバーマザーボード (LGA2011-3)",
+        "en": "X99 server motherboard (LGA2011-3)"
+      },
+      "ram": {
+        "sizeGB": 64,
+        "type": "DDR4 ECC RDIMM"
+      },
+      "storage": {
+        "label": "512GB",
+        "type": "M.2 NVMe SSD"
+      },
+      "psu": {
+        "wattage": 1000,
+        "rating": "80+ Gold",
+        "pseCertified": true
+      },
+      "chassis": {
+        "ja": "ミドルタワー ATX",
+        "en": "Mid-tower ATX"
+      },
+      "cooling": {
+        "ja": "空冷 (LGA2011-3 対応)",
+        "en": "Air cooling (LGA2011-3)"
+      },
+      "performance": [
+        {
+          "model": "32B",
+          "quant": "Q4",
+          "tokensPerSec": 30
+        },
+        {
+          "model": "32B",
+          "quant": "Q8",
+          "tokensPerSec": 19
+        }
+      ],
+      "canRun": {
+        "ja": [
+          "32B クラスの量子化モデルを快適に",
+          "70B-Q4 も動作可"
+        ],
+        "en": [
+          "Runs 32B quantized models smoothly",
+          "70B-Q4 also works"
+        ]
+      },
+      "bestFor": {
+        "ja": [
+          "個人研究者"
+        ],
+        "en": [
+          "Individual researchers"
+        ]
+      },
+      "valueProps": {
+        "ja": [
+          "完成・テスト・1年保証済みの整機を、自作パーツ代とほぼ同額で",
+          "最安クラスの 32GB VRAM 構成"
+        ],
+        "en": [
+          "A fully assembled, tested, warrantied unit for about the cost of DIY parts",
+          "Lowest-cost 32GB VRAM build"
+        ]
+      },
+      "badges": {
+        "ja": [
+          "エントリー",
+          "32GB VRAM"
+        ],
+        "en": [
+          "Entry",
+          "32GB VRAM"
+        ]
+      },
+      "warranty": {
+        "ja": "1年整機保証 + GPU専用保証",
+        "en": "1-year whole-unit warranty + dedicated GPU warranty"
+      },
+      "images": {
+        "hero": "/images/products/v100-dual-32g/hero.webp",
+        "thumbnail": "/images/products/v100-dual-32g/thumb.webp",
+        "gallery": [
+          "/images/products/v100-dual-32g/01.webp",
+          "/images/products/v100-dual-32g/02.webp"
+        ]
+      },
+      "disclaimers": [
+        {
+          "ja": "GPUは動作確認済み",
+          "en": "GPUs are tested."
+        },
+        {
+          "ja": "PSE認証電源",
+          "en": "PSE-certified power supply unit installed."
+        }
+      ]
+    },
+    {
+      "id": "sku-04",
+      "rank": 4,
+      "label": "④",
+      "slug": "v100-triple-48g",
+      "tier": "entry",
+      "featured": false,
+      "status": "active",
+      "name": "V100 48G",
+      "category": {
+        "ja": "ローカルLLM推論ワークステーション",
+        "en": "Local LLM Inference Workstation"
+      },
+      "tagline": {
+        "ja": "単体GPUでは届かない 48GB VRAM を最安で。",
+        "en": "48GB VRAM no single consumer GPU can reach — at the lowest price."
+      },
+      "prices": {
+        "JPY": 598000,
+        "USD": 3860
+      },
+      "priceLabels": {
+        "JPY": "¥598,000",
+        "USD": "$3,860"
+      },
+      "vramGB": 48,
+      "gpu": {
+        "model": "NVIDIA Tesla V100 PCIe",
+        "memoryType": "HBM2",
+        "count": 3,
+        "configLabel": "16GB×3",
+        "vramTotalGB": 48
+      },
+      "cpu": {
+        "model": "Intel Xeon E5-2696 V4",
+        "cores": 22,
+        "threads": 44
+      },
+      "motherboard": {
+        "ja": "X99 サーバーマザーボード (LGA2011-3, 3スロット)",
+        "en": "X99 server motherboard (LGA2011-3, 3 slots)"
+      },
+      "ram": {
+        "sizeGB": 64,
+        "type": "DDR4 ECC RDIMM"
+      },
+      "storage": {
+        "label": "512GB",
+        "type": "M.2 NVMe SSD"
+      },
+      "psu": {
+        "wattage": 1300,
+        "rating": "80+ Gold/Platinum",
+        "pseCertified": true
+      },
+      "chassis": {
+        "ja": "フルタワー E-ATX",
+        "en": "Full-tower E-ATX"
+      },
+      "cooling": {
+        "ja": "空冷 (LGA2011-3 対応)",
+        "en": "Air cooling (LGA2011-3)"
+      },
+      "performance": [
+        {
+          "model": "32B",
+          "quant": "Q8",
+          "tokensPerSec": 26
+        }
+      ],
+      "canRun": {
+        "ja": [
+          "32B-Q8 高精度推論",
+          "70B-Q4 快適"
+        ],
+        "en": [
+          "32B-Q8 high-precision inference",
+          "70B-Q4 runs smoothly"
+        ]
+      },
+      "bestFor": {
+        "ja": [
+          "32B 高精度",
+          "70B 入門"
+        ],
+        "en": [
+          "32B high-precision",
+          "70B entry"
+        ]
+      },
+      "valueProps": {
+        "ja": [
+          "48GB VRAM は単体5090(32GB)では不可能",
+          "2×5090(¥80万+)より大幅に安い"
+        ],
+        "en": [
+          "48GB VRAM is impossible on a single 5090 (32GB)",
+          "Far cheaper than 2×5090 (¥800k+)"
+        ]
+      },
+      "badges": {
+        "ja": [
+          "48GB VRAM",
+          "コスパ"
+        ],
+        "en": [
+          "48GB VRAM",
+          "Value"
+        ]
+      },
+      "warranty": {
+        "ja": "1年整機保証 + GPU専用保証",
+        "en": "1-year whole-unit warranty + dedicated GPU warranty"
+      },
+      "images": {
+        "hero": "/images/products/v100-triple-48g/hero.webp",
+        "thumbnail": "/images/products/v100-triple-48g/thumb.webp",
+        "gallery": [
+          "/images/products/v100-triple-48g/01.webp",
+          "/images/products/v100-triple-48g/02.webp"
+        ]
+      },
+      "disclaimers": [
+        {
+          "ja": "GPUは動作確認済み",
+          "en": "GPUs are tested."
+        },
+        {
+          "ja": "PSE認証電源",
+          "en": "PSE-certified power supply unit installed."
+        }
+      ]
+    },
+    {
+      "id": "sku-05",
+      "rank": 5,
+      "label": "⑤",
+      "slug": "v100-64g",
+      "tier": "mid",
+      "featured": false,
+      "status": "active",
+      "name": "V100 64G",
+      "category": {
+        "ja": "ローカルLLM推論ワークステーション",
+        "en": "Local LLM Inference Workstation"
+      },
+      "tagline": {
+        "ja": "70B クラスをローカルで。64GB VRAM の標準構成。",
+        "en": "Run 70B-class locally. The standard 64GB VRAM build."
+      },
+      "prices": {
+        "JPY": 648000,
+        "USD": 4180
+      },
+      "priceLabels": {
+        "JPY": "¥648,000",
+        "USD": "$4,180"
+      },
+      "vramGB": 64,
+      "gpu": {
+        "model": "NVIDIA Tesla V100 PCIe",
+        "memoryType": "HBM2",
+        "count": 3,
+        "configLabel": "32GB×1 + 16GB×2",
+        "vramTotalGB": 64
+      },
+      "cpu": {
+        "model": "Intel Xeon E5-2696 V4",
+        "cores": 22,
+        "threads": 44
+      },
+      "motherboard": {
+        "ja": "X99 サーバーマザーボード (LGA2011-3, 3スロット)",
+        "en": "X99 server motherboard (LGA2011-3, 3 slots)"
+      },
+      "ram": {
+        "sizeGB": 64,
+        "type": "DDR4 ECC RDIMM"
+      },
+      "storage": {
+        "label": "512GB",
+        "type": "M.2 NVMe SSD"
+      },
+      "psu": {
+        "wattage": 1300,
+        "rating": "80+ Gold/Platinum",
+        "pseCertified": true
+      },
+      "chassis": {
+        "ja": "フルタワー E-ATX",
+        "en": "Full-tower E-ATX"
+      },
+      "cooling": {
+        "ja": "空冷 (LGA2011-3 対応)",
+        "en": "Air cooling (LGA2011-3)"
+      },
+      "performance": [
+        {
+          "model": "70B",
+          "quant": "Q4",
+          "tokensPerSec": 12
+        }
+      ],
+      "canRun": {
+        "ja": [
+          "70B-Q4 動作",
+          "32B 高精度を余裕で"
+        ],
+        "en": [
+          "70B-Q4 runs",
+          "32B high-precision with headroom"
+        ]
+      },
+      "bestFor": {
+        "ja": [
+          "70B クラス推論",
+          "研究室"
+        ],
+        "en": [
+          "70B-class inference",
+          "Research labs"
+        ]
+      },
+      "valueProps": {
+        "ja": [
+          "64GB VRAM は単体コンシューマGPUでは到達不可",
+          "プロ用GPU(¥100万+)を不要に"
+        ],
+        "en": [
+          "64GB VRAM unreachable by any single consumer GPU",
+          "Removes the need for pro GPUs (¥1M+)"
+        ]
+      },
+      "badges": {
+        "ja": [
+          "64GB VRAM",
+          "70B 対応"
+        ],
+        "en": [
+          "64GB VRAM",
+          "70B-ready"
+        ]
+      },
+      "warranty": {
+        "ja": "1年整機保証 + GPU専用保証",
+        "en": "1-year whole-unit warranty + dedicated GPU warranty"
+      },
+      "images": {
+        "hero": "/images/products/v100-64g/hero.webp",
+        "thumbnail": "/images/products/v100-64g/thumb.webp",
+        "gallery": [
+          "/images/products/v100-64g/01.webp",
+          "/images/products/v100-64g/02.webp"
+        ]
+      },
+      "disclaimers": [
+        {
+          "ja": "GPUは動作確認済み",
+          "en": "GPUs are tested."
+        },
+        {
+          "ja": "PSE認証電源",
+          "en": "PSE-certified power supply unit installed."
+        }
+      ]
+    },
+    {
+      "id": "sku-06",
+      "rank": 6,
+      "label": "⑥",
+      "slug": "v100-64g-highmem",
+      "tier": "mid",
+      "featured": false,
+      "status": "active",
+      "name": "V100 64G Plus",
+      "category": {
+        "ja": "ローカルLLM推論ワークステーション",
+        "en": "Local LLM Inference Workstation"
+      },
+      "tagline": {
+        "ja": "70B-Q8 高精度 + 大容量 96GB システムメモリ。",
+        "en": "70B-Q8 high-precision + 96GB of system memory."
+      },
+      "prices": {
+        "JPY": 698000,
+        "USD": 4500
+      },
+      "priceLabels": {
+        "JPY": "¥698,000",
+        "USD": "$4,500"
+      },
+      "vramGB": 64,
+      "gpu": {
+        "model": "NVIDIA Tesla V100 PCIe",
+        "memoryType": "HBM2",
+        "count": 3,
+        "configLabel": "32GB×1 + 16GB×2",
+        "vramTotalGB": 64
+      },
+      "cpu": {
+        "model": "Intel Xeon E5-2696 V4",
+        "cores": 22,
+        "threads": 44
+      },
+      "motherboard": {
+        "ja": "X99 サーバーマザーボード (LGA2011-3, 3スロット)",
+        "en": "X99 server motherboard (LGA2011-3, 3 slots)"
+      },
+      "ram": {
+        "sizeGB": 96,
+        "type": "DDR4 ECC RDIMM"
+      },
+      "storage": {
+        "label": "1TB",
+        "type": "M.2 NVMe SSD"
+      },
+      "psu": {
+        "wattage": 1300,
+        "rating": "80+ Gold/Platinum",
+        "pseCertified": true
+      },
+      "chassis": {
+        "ja": "フルタワー E-ATX",
+        "en": "Full-tower E-ATX"
+      },
+      "cooling": {
+        "ja": "空冷 (LGA2011-3 対応)",
+        "en": "Air cooling (LGA2011-3)"
+      },
+      "performance": [
+        {
+          "model": "70B",
+          "quant": "Q8",
+          "tokensPerSec": 10
+        }
+      ],
+      "canRun": {
+        "ja": [
+          "70B-Q8 高精度",
+          "大容量メモリで前処理・複数モデル"
+        ],
+        "en": [
+          "70B-Q8 high-precision",
+          "Heavy preprocessing & multi-model with ample RAM"
+        ]
+      },
+      "bestFor": {
+        "ja": [
+          "70B 高精度推論",
+          "データ前処理が重い用途"
+        ],
+        "en": [
+          "70B high-precision inference",
+          "Heavy data-preprocessing workloads"
+        ]
+      },
+      "valueProps": {
+        "ja": [
+          "96GB ECC メモリで重い前処理も余裕",
+          "70B-Q8 をローカルで"
+        ],
+        "en": [
+          "96GB ECC RAM handles heavy preprocessing",
+          "Run 70B-Q8 locally"
+        ]
+      },
+      "badges": {
+        "ja": [
+          "64GB VRAM",
+          "96GB RAM",
+          "高精度"
+        ],
+        "en": [
+          "64GB VRAM",
+          "96GB RAM",
+          "High-precision"
+        ]
+      },
+      "warranty": {
+        "ja": "1年整機保証 + GPU専用保証",
+        "en": "1-year whole-unit warranty + dedicated GPU warranty"
+      },
+      "images": {
+        "hero": "/images/products/v100-64g-highmem/hero.webp",
+        "thumbnail": "/images/products/v100-64g-highmem/thumb.webp",
+        "gallery": [
+          "/images/products/v100-64g-highmem/01.webp",
+          "/images/products/v100-64g-highmem/02.webp"
+        ]
+      },
+      "disclaimers": [
+        {
+          "ja": "GPUは動作確認済み",
+          "en": "GPUs are tested."
+        },
+        {
+          "ja": "PSE認証電源",
+          "en": "PSE-certified power supply unit installed."
+        }
+      ]
+    },
+    {
+      "id": "sku-07",
+      "rank": 7,
+      "label": "⑦",
+      "slug": "v100-80g",
+      "tier": "mid",
+      "featured": true,
+      "status": "active",
+      "name": "V100 80G",
+      "category": {
+        "ja": "ローカルLLM推論ワークステーション",
+        "en": "Local LLM Inference Workstation"
+      },
+      "tagline": {
+        "ja": "80GB VRAM。70B-Q8 を余裕で、複数モデル同時も。",
+        "en": "80GB VRAM. 70B-Q8 with headroom, multiple models at once."
+      },
+      "prices": {
+        "JPY": 798000,
+        "USD": 5150
+      },
+      "priceLabels": {
+        "JPY": "¥798,000",
+        "USD": "$5,150"
+      },
+      "vramGB": 80,
+      "gpu": {
+        "model": "NVIDIA Tesla V100 PCIe",
+        "memoryType": "HBM2",
+        "count": 3,
+        "configLabel": "32GB×2 + 16GB×1",
+        "vramTotalGB": 80
+      },
+      "cpu": {
+        "model": "Intel Xeon E5-2696 V4",
+        "cores": 22,
+        "threads": 44
+      },
+      "motherboard": {
+        "ja": "X99 サーバーマザーボード (LGA2011-3, 3スロット)",
+        "en": "X99 server motherboard (LGA2011-3, 3 slots)"
+      },
+      "ram": {
+        "sizeGB": 128,
+        "type": "DDR4 ECC RDIMM"
+      },
+      "storage": {
+        "label": "1TB",
+        "type": "M.2 NVMe SSD"
+      },
+      "psu": {
+        "wattage": 1300,
+        "rating": "80+ Gold/Platinum",
+        "pseCertified": true
+      },
+      "chassis": {
+        "ja": "フルタワー E-ATX",
+        "en": "Full-tower E-ATX"
+      },
+      "cooling": {
+        "ja": "空冷 (LGA2011-3 対応)",
+        "en": "Air cooling (LGA2011-3)"
+      },
+      "performance": [
+        {
+          "model": "70B",
+          "quant": "Q8",
+          "tokensPerSec": 12
+        }
+      ],
+      "canRun": {
+        "ja": [
+          "70B-Q8 を余裕で",
+          "複数モデル同時稼働",
+          "100B級も視野"
+        ],
+        "en": [
+          "70B-Q8 with headroom",
+          "Multiple models concurrently",
+          "100B-class within reach"
+        ]
+      },
+      "bestFor": {
+        "ja": [
+          "70B 高精度",
+          "マルチモデル運用"
+        ],
+        "en": [
+          "70B high-precision",
+          "Multi-model serving"
+        ]
+      },
+      "valueProps": {
+        "ja": [
+          "80GB VRAM + 128GB RAM のバランス構成",
+          "複数モデルを常駐できる"
+        ],
+        "en": [
+          "Balanced 80GB VRAM + 128GB RAM",
+          "Keep multiple models resident"
+        ]
+      },
+      "badges": {
+        "ja": [
+          "80GB VRAM",
+          "128GB RAM",
+          "おすすめ"
+        ],
+        "en": [
+          "80GB VRAM",
+          "128GB RAM",
+          "Recommended"
+        ]
+      },
+      "warranty": {
+        "ja": "1年整機保証 + GPU専用保証",
+        "en": "1-year whole-unit warranty + dedicated GPU warranty"
+      },
+      "images": {
+        "hero": "/images/products/v100-80g/hero.webp",
+        "thumbnail": "/images/products/v100-80g/thumb.webp",
+        "gallery": [
+          "/images/products/v100-80g/01.webp",
+          "/images/products/v100-80g/02.webp"
+        ]
+      },
+      "disclaimers": [
+        {
+          "ja": "GPUは動作確認済み",
+          "en": "GPUs are tested."
+        },
+        {
+          "ja": "PSE認証電源",
+          "en": "PSE-certified power supply unit installed."
+        }
+      ]
+    },
+    {
+      "id": "sku-08",
+      "rank": 8,
+      "label": "⑧",
+      "slug": "v100-96g",
+      "tier": "mid",
+      "featured": true,
+      "status": "active",
+      "name": "V100 96G",
+      "category": {
+        "ja": "ローカルLLM推論ワークステーション",
+        "en": "Local LLM Inference Workstation"
+      },
+      "tagline": {
+        "ja": "96GB VRAM(32GB×3)。70B-Q8 + 複数モデル、100B級も。",
+        "en": "96GB VRAM (32GB×3). 70B-Q8 + multi-model, even 100B-class."
+      },
+      "prices": {
+        "JPY": 898000,
+        "USD": 5790
+      },
+      "priceLabels": {
+        "JPY": "¥898,000",
+        "USD": "$5,790"
+      },
+      "vramGB": 96,
+      "gpu": {
+        "model": "NVIDIA Tesla V100 PCIe",
+        "memoryType": "HBM2",
+        "count": 3,
+        "configLabel": "32GB×3",
+        "vramTotalGB": 96
+      },
+      "cpu": {
+        "model": "Intel Xeon E5-2696 V4",
+        "cores": 22,
+        "threads": 44
+      },
+      "motherboard": {
+        "ja": "X99 サーバーマザーボード (LGA2011-3, 3スロット)",
+        "en": "X99 server motherboard (LGA2011-3, 3 slots)"
+      },
+      "ram": {
+        "sizeGB": 128,
+        "type": "DDR4 ECC RDIMM"
+      },
+      "storage": {
+        "label": "2TB",
+        "type": "M.2 NVMe SSD"
+      },
+      "psu": {
+        "wattage": 1300,
+        "rating": "80+ Gold/Platinum",
+        "pseCertified": true
+      },
+      "chassis": {
+        "ja": "フルタワー E-ATX",
+        "en": "Full-tower E-ATX"
+      },
+      "cooling": {
+        "ja": "空冷 (LGA2011-3 対応)",
+        "en": "Air cooling (LGA2011-3)"
+      },
+      "performance": [
+        {
+          "model": "70B",
+          "quant": "Q8",
+          "tokensPerSec": 10
+        }
+      ],
+      "canRun": {
+        "ja": [
+          "70B-Q8 高精度 + 複数モデル",
+          "100B級モデルも視野"
+        ],
+        "en": [
+          "70B-Q8 high-precision + multi-model",
+          "100B-class within reach"
+        ]
+      },
+      "bestFor": {
+        "ja": [
+          "70B 高精度",
+          "複数大規模モデル"
+        ],
+        "en": [
+          "70B high-precision",
+          "Multiple large models"
+        ]
+      },
+      "valueProps": {
+        "ja": [
+          "96GB VRAM は全て 32GB カードで構成",
+          "タワー型最大構成"
+        ],
+        "en": [
+          "96GB VRAM all from 32GB cards",
+          "Largest tower-format build"
+        ]
+      },
+      "badges": {
+        "ja": [
+          "96GB VRAM",
+          "フラッグシップ(タワー)"
+        ],
+        "en": [
+          "96GB VRAM",
+          "Flagship (tower)"
+        ]
+      },
+      "warranty": {
+        "ja": "1年整機保証 + GPU専用保証",
+        "en": "1-year whole-unit warranty + dedicated GPU warranty"
+      },
+      "images": {
+        "hero": "/images/products/v100-96g/hero.webp",
+        "thumbnail": "/images/products/v100-96g/thumb.webp",
+        "gallery": [
+          "/images/products/v100-96g/01.webp",
+          "/images/products/v100-96g/02.webp"
+        ]
+      },
+      "disclaimers": [
+        {
+          "ja": "GPUは動作確認済み",
+          "en": "GPUs are tested."
+        },
+        {
+          "ja": "PSE認証電源",
+          "en": "PSE-certified power supply unit installed."
+        }
+      ]
+    },
+    {
+      "id": "sku-09",
+      "rank": 9,
+      "label": "⑨",
+      "slug": "epyc-4gpu-128g-entry",
+      "tier": "flagship",
+      "featured": true,
+      "status": "active",
+      "name": "V100 128G",
+      "category": {
+        "ja": "ローカルLLM推論サーバー",
+        "en": "Local LLM Inference Server"
+      },
+      "tagline": {
+        "ja": "128GB VRAM・4GPU。100B+ (千億) クラスをローカルで。",
+        "en": "128GB VRAM, 4 GPUs. Run 100B+ (hundred-billion) class locally."
+      },
+      "prices": {
+        "JPY": 1298000,
+        "USD": 8370
+      },
+      "priceLabels": {
+        "JPY": "¥1,298,000",
+        "USD": "$8,370"
+      },
+      "vramGB": 128,
+      "gpu": {
+        "model": "NVIDIA Tesla V100 PCIe",
+        "memoryType": "HBM2",
+        "count": 4,
+        "configLabel": "32GB×4",
+        "vramTotalGB": 128
+      },
+      "cpu": {
+        "model": "AMD EPYC 7402",
+        "cores": 24,
+        "threads": 48
+      },
+      "motherboard": {
+        "ja": "EPYC SP3 サーバーマザーボード",
+        "en": "EPYC SP3 server motherboard"
+      },
+      "ram": {
+        "sizeGB": 64,
+        "type": "DDR4 ECC RDIMM"
+      },
+      "storage": {
+        "label": "1TB",
+        "type": "M.2 NVMe SSD"
+      },
+      "psu": {
+        "wattage": 1300,
+        "rating": "80+ Platinum",
+        "pseCertified": true,
+        "note": {
+          "ja": "GPU電力制限済み",
+          "en": "GPU power-limited"
+        }
+      },
+      "chassis": {
+        "ja": "大型サーバーケース (SSI-EEB)",
+        "en": "Large server case (SSI-EEB)"
+      },
+      "cooling": {
+        "ja": "空冷 (Socket SP3)",
+        "en": "Air cooling (Socket SP3)"
+      },
+      "performance": [
+        {
+          "model": "70B",
+          "quant": "Q8",
+          "tokensPerSec": null,
+          "note": {
+            "ja": "千億パラメータ対応",
+            "en": "Supports 100B+ params"
+          }
+        }
+      ],
+      "canRun": {
+        "ja": [
+          "100B+ (千億) クラス",
+          "大型 MoE",
+          "複数大規模モデル同時"
+        ],
+        "en": [
+          "100B+ (hundred-billion) class",
+          "Large MoE",
+          "Multiple large models at once"
+        ]
+      },
+      "bestFor": {
+        "ja": [
+          "100B級ローカル推論",
+          "スタートアップの推論基盤"
+        ],
+        "en": [
+          "100B-class local inference",
+          "Startup inference backbone"
+        ]
+      },
+      "valueProps": {
+        "ja": [
+          "128GB VRAM をこの価格帯で",
+          "Applied 等の ¥1300万クラスに対し VRAM単価 1/9 以下"
+        ],
+        "en": [
+          "128GB VRAM at this price",
+          "Under 1/9 the VRAM cost of ¥13M-class systems (e.g., Applied)"
+        ]
+      },
+      "badges": {
+        "ja": [
+          "128GB VRAM",
+          "4GPU",
+          "EPYC"
+        ],
+        "en": [
+          "128GB VRAM",
+          "4 GPU",
+          "EPYC"
+        ]
+      },
+      "warranty": {
+        "ja": "1年整機保証 + GPU専用保証",
+        "en": "1-year whole-unit warranty + dedicated GPU warranty"
+      },
+      "images": {
+        "hero": "/images/products/epyc-4gpu-128g-entry/hero.webp",
+        "thumbnail": "/images/products/epyc-4gpu-128g-entry/thumb.webp",
+        "gallery": [
+          "/images/products/epyc-4gpu-128g-entry/01.webp",
+          "/images/products/epyc-4gpu-128g-entry/02.webp"
+        ]
+      },
+      "disclaimers": [
+        {
+          "ja": "GPUは動作確認済み",
+          "en": "GPUs are tested."
+        },
+        {
+          "ja": "PSE認証電源",
+          "en": "PSE-certified power supply unit installed."
+        }
+      ]
+    },
+    {
+      "id": "sku-10",
+      "rank": 10,
+      "label": "⑩",
+      "slug": "epyc-4gpu-128g-plus",
+      "tier": "flagship",
+      "featured": false,
+      "status": "active",
+      "name": "V100 128G Plus",
+      "category": {
+        "ja": "ローカルLLM推論サーバー",
+        "en": "Local LLM Inference Server"
+      },
+      "tagline": {
+        "ja": "128GB VRAM + 96GB システムメモリ + 2TB ストレージ。",
+        "en": "128GB VRAM + 96GB system RAM + 2TB storage."
+      },
+      "prices": {
+        "JPY": 1348000,
+        "USD": 8700
+      },
+      "priceLabels": {
+        "JPY": "¥1,348,000",
+        "USD": "$8,700"
+      },
+      "vramGB": 128,
+      "gpu": {
+        "model": "NVIDIA Tesla V100 PCIe",
+        "memoryType": "HBM2",
+        "count": 4,
+        "configLabel": "32GB×4",
+        "vramTotalGB": 128
+      },
+      "cpu": {
+        "model": "AMD EPYC 7402",
+        "cores": 24,
+        "threads": 48
+      },
+      "motherboard": {
+        "ja": "EPYC SP3 サーバーマザーボード",
+        "en": "EPYC SP3 server motherboard"
+      },
+      "ram": {
+        "sizeGB": 96,
+        "type": "DDR4 ECC RDIMM"
+      },
+      "storage": {
+        "label": "2TB",
+        "type": "M.2 NVMe SSD"
+      },
+      "psu": {
+        "wattage": 1300,
+        "rating": "80+ Platinum",
+        "pseCertified": true,
+        "note": {
+          "ja": "GPU電力制限済み",
+          "en": "GPU power-limited"
+        }
+      },
+      "chassis": {
+        "ja": "大型サーバーケース (SSI-EEB)",
+        "en": "Large server case (SSI-EEB)"
+      },
+      "cooling": {
+        "ja": "空冷 (Socket SP3)",
+        "en": "Air cooling (Socket SP3)"
+      },
+      "performance": [
+        {
+          "model": "70B",
+          "quant": "Q8",
+          "tokensPerSec": null,
+          "note": {
+            "ja": "千億パラメータ対応",
+            "en": "Supports 100B+ params"
+          }
+        }
+      ],
+      "canRun": {
+        "ja": [
+          "100B+ (千億) クラス",
+          "大型 MoE",
+          "複数大規模モデル同時"
+        ],
+        "en": [
+          "100B+ (hundred-billion) class",
+          "Large MoE",
+          "Multiple large models at once"
+        ]
+      },
+      "bestFor": {
+        "ja": [
+          "100B級推論 + 大容量メモリ用途"
+        ],
+        "en": [
+          "100B-class inference + large-memory workloads"
+        ]
+      },
+      "valueProps": {
+        "ja": [
+          "96GB RAM + 2TB で重いデータパイプラインも",
+          "128GB VRAM"
+        ],
+        "en": [
+          "96GB RAM + 2TB for heavy data pipelines",
+          "128GB VRAM"
+        ]
+      },
+      "badges": {
+        "ja": [
+          "128GB VRAM",
+          "96GB RAM",
+          "4GPU"
+        ],
+        "en": [
+          "128GB VRAM",
+          "96GB RAM",
+          "4 GPU"
+        ]
+      },
+      "warranty": {
+        "ja": "1年整機保証 + GPU専用保証",
+        "en": "1-year whole-unit warranty + dedicated GPU warranty"
+      },
+      "images": {
+        "hero": "/images/products/epyc-4gpu-128g-plus/hero.webp",
+        "thumbnail": "/images/products/epyc-4gpu-128g-plus/thumb.webp",
+        "gallery": [
+          "/images/products/epyc-4gpu-128g-plus/01.webp",
+          "/images/products/epyc-4gpu-128g-plus/02.webp"
+        ]
+      },
+      "disclaimers": [
+        {
+          "ja": "GPUは動作確認済み",
+          "en": "GPUs are tested."
+        },
+        {
+          "ja": "PSE認証電源",
+          "en": "PSE-certified power supply unit installed."
+        }
+      ]
+    },
+    {
+      "id": "sku-11",
+      "rank": 11,
+      "label": "⑪",
+      "slug": "epyc-4gpu-128g-max",
+      "tier": "flagship",
+      "featured": true,
+      "status": "active",
+      "name": "V100 128G Max",
+      "category": {
+        "ja": "ローカルLLM推論サーバー",
+        "en": "Local LLM Inference Server"
+      },
+      "tagline": {
+        "ja": "全部入り。128GB VRAM + 128GB RAM + 4TB(2TB×2)。",
+        "en": "Fully loaded. 128GB VRAM + 128GB RAM + 4TB (2TB×2)."
+      },
+      "prices": {
+        "JPY": 1398000,
+        "USD": 9020
+      },
+      "priceLabels": {
+        "JPY": "¥1,398,000",
+        "USD": "$9,020"
+      },
+      "vramGB": 128,
+      "gpu": {
+        "model": "NVIDIA Tesla V100 PCIe",
+        "memoryType": "HBM2",
+        "count": 4,
+        "configLabel": "32GB×4",
+        "vramTotalGB": 128
+      },
+      "cpu": {
+        "model": "AMD EPYC 7402",
+        "cores": 24,
+        "threads": 48
+      },
+      "motherboard": {
+        "ja": "EPYC SP3 サーバーマザーボード",
+        "en": "EPYC SP3 server motherboard"
+      },
+      "ram": {
+        "sizeGB": 128,
+        "type": "DDR4 ECC RDIMM"
+      },
+      "storage": {
+        "label": "4TB (2TB×2)",
+        "type": "M.2 NVMe SSD"
+      },
+      "psu": {
+        "wattage": 1300,
+        "rating": "80+ Platinum",
+        "pseCertified": true,
+        "note": {
+          "ja": "GPU電力制限済み",
+          "en": "GPU power-limited"
+        }
+      },
+      "chassis": {
+        "ja": "大型サーバーケース (SSI-EEB)",
+        "en": "Large server case (SSI-EEB)"
+      },
+      "cooling": {
+        "ja": "空冷 (Socket SP3)",
+        "en": "Air cooling (Socket SP3)"
+      },
+      "performance": [
+        {
+          "model": "70B",
+          "quant": "Q8",
+          "tokensPerSec": null,
+          "note": {
+            "ja": "千億パラメータ対応",
+            "en": "Supports 100B+ params"
+          }
+        }
+      ],
+      "canRun": {
+        "ja": [
+          "100B+ (千億) クラス",
+          "大型 MoE",
+          "複数大規模モデル + 大容量データ"
+        ],
+        "en": [
+          "100B+ (hundred-billion) class",
+          "Large MoE",
+          "Multiple large models + large datasets"
+        ]
+      },
+      "bestFor": {
+        "ja": [
+          "最大構成を求めるユーザー",
+          "推論基盤の旗艦機"
+        ],
+        "en": [
+          "Users wanting the max config",
+          "Flagship inference backbone"
+        ]
+      },
+      "valueProps": {
+        "ja": [
+          "VRAM/RAM/ストレージ全て最大",
+          "128GB VRAM をフルに活かす構成"
+        ],
+        "en": [
+          "Max VRAM/RAM/storage",
+          "Build that fully leverages 128GB VRAM"
+        ]
+      },
+      "badges": {
+        "ja": [
+          "128GB VRAM",
+          "128GB RAM",
+          "4TB",
+          "旗艦"
+        ],
+        "en": [
+          "128GB VRAM",
+          "128GB RAM",
+          "4TB",
+          "Flagship"
+        ]
+      },
+      "warranty": {
+        "ja": "1年整機保証 + GPU専用保証",
+        "en": "1-year whole-unit warranty + dedicated GPU warranty"
+      },
+      "images": {
+        "hero": "/images/products/epyc-4gpu-128g-max/hero.webp",
+        "thumbnail": "/images/products/epyc-4gpu-128g-max/thumb.webp",
+        "gallery": [
+          "/images/products/epyc-4gpu-128g-max/01.webp",
+          "/images/products/epyc-4gpu-128g-max/02.webp"
+        ]
+      },
+      "disclaimers": [
+        {
+          "ja": "GPUは動作確認済み",
+          "en": "GPUs are tested."
+        },
+        {
+          "ja": "PSE認証電源",
+          "en": "PSE-certified power supply unit installed."
+        }
+      ]
+    }
+  ]
+}
