@@ -23,12 +23,26 @@ Market: Japan-first, expanding overseas. Commerce: inquiry-based. Catalog is mai
 
 ## Data sources
 
+- **Machine catalog (source of truth)**: [`packages/shared/src/data/products.json`](./packages/shared/src/data/products.json). Edit this file to change prices, specs, copy, or add SKUs — `machines.ts` and `catalog.ts` derive everything from it (see [Editing the catalog](#editing-the-catalog)).
 - **VRAM estimation logic**: Derived from a deep research report analyzing inference memory requirements (weight memory, KV cache, runtime overhead).
 - **Model catalog**: Seed data modeled after Ollama-style catalogs (Llama 3.1/3.2, Qwen 2.5, Gemma 2, DeepSeek, Mistral, Mixtral, Phi 3). Architecture parameters sourced from published model configs.
 - **Intelligence scores**: Based on external leaderboard data (Artificial Analysis style).
 - **GPU profiles**: Common NVIDIA consumer (RTX 30/40/50 series), professional, and datacenter cards.
 
 All data is stored locally as TypeScript seed files. No live scraping or external API calls at runtime.
+
+## Editing the catalog
+
+The machine catalog lives entirely in [`packages/shared/src/data/products.json`](./packages/shared/src/data/products.json):
+
+- **Change a price**: edit `products[].prices.JPY` / `.USD` and the matching `priceLabels`.
+- **Add a SKU**: append an object to `products[]` with a unique `id`/`slug`. A page is generated automatically per locale.
+- **Localized copy**: translatable fields are `{ "ja": ..., "en": ... }` objects; the UI reads `field[locale]`.
+- **Performance**: `products[].performance[]` rows with `tokensPerSec: null` are hidden until measured.
+- **Shared content** (warranty, PSE note, competitor anchors, GPU-platform note): edit once under `shared.*` / `tiers.*` and it applies everywhere.
+- `brand.supportEmail` is still `(TODO)` — fill it in when the inquiry backend is wired up.
+
+`machines.ts` / `catalog.ts` only re-shape this JSON into typed exports; no catalog data is hardcoded in `.ts`.
 
 ## Estimation assumptions
 
