@@ -8,3 +8,9 @@ dist/
 *.tsbuildinfo
 next-env.d.ts
 .turbo/
+
+# OS files
+.DS_Store
+
+# Internal commercial data (BOM costs, import pricing, margins, supplier configs) — never commit
+info/
