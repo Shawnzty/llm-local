@@ -5,6 +5,7 @@ import { logger } from 'hono/logger';
 import { health } from './routes/health.js';
 import { models } from './routes/models.js';
 import { gpus } from './routes/gpus.js';
+import { inquiries } from './routes/inquiries.js';
 
 const app = new Hono();
 
@@ -24,13 +25,15 @@ app.use(
       if (/^https:\/\/[a-z0-9-]+\.vercel\.app$/.test(origin)) return origin;
       return null;
     },
-    allowMethods: ['GET', 'OPTIONS'],
+    allowMethods: ['GET', 'POST', 'OPTIONS'],
+    allowHeaders: ['Content-Type'],
   }),
 );
 
 app.route('/health', health);
 app.route('/models', models);
 app.route('/gpus', gpus);
+app.route('/inquiries', inquiries);
 
 app.notFound((c) => c.json({ error: 'Not found' }, 404));
 app.onError((err, c) => {

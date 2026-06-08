@@ -6,6 +6,7 @@ import {
   boolean,
   jsonb,
   timestamp,
+  uuid,
 } from 'drizzle-orm/pg-core';
 import type { ModelTypeBadge } from '@tadzuna/shared';
 
@@ -45,4 +46,16 @@ export const gpuProfiles = pgTable('gpu_profiles', {
   tier: text('tier').notNull(),
   source: text('source'),
   lastUpdated: timestamp('last_updated', { withTimezone: true }).defaultNow().notNull(),
+});
+
+export const inquiries = pgTable('inquiries', {
+  id: uuid('id').defaultRandom().primaryKey(),
+  name: text('name').notNull(),
+  email: text('email').notNull(),
+  phone: text('phone'),
+  company: text('company'),
+  machineId: text('machine_id'),
+  message: text('message').notNull(),
+  locale: text('locale'),
+  createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
 });
