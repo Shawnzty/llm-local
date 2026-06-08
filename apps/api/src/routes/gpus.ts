@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { GPU_PROFILES, getGpuById } from '@llm-local/shared';
+import { GPU_PROFILES, getGpuById } from '@tadzuna/shared';
 import { readGpusFromDb } from '../db/queries.js';
 
 export const gpus = new Hono();

@@ -3,7 +3,7 @@ import {
   GPU_PROFILES,
   type ModelFamily,
   type GpuProfile,
-} from '@llm-local/shared';
+} from '@tadzuna/shared';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const REVALIDATE_SECONDS = 3600;

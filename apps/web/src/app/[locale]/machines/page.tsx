@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { MACHINES, TIERS, TIER_ORDER } from '@llm-local/shared';
-import type { Locale } from '@llm-local/shared';
+import { MACHINES, TIERS, TIER_ORDER } from '@tadzuna/shared';
+import type { Locale } from '@tadzuna/shared';
 import { MachineCard } from '@/components/MachineCard';
 
 export default async function MachinesPage({

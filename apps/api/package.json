@@ -1,5 +1,5 @@
 {
-  "name": "@llm-local/api",
+  "name": "@tadzuna/api",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
-    "@llm-local/shared": "workspace:*",
+    "@tadzuna/shared": "workspace:*",
     "drizzle-orm": "^0.36.4",
     "hono": "^4.6.12",
     "postgres": "^3.4.5"

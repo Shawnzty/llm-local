@@ -1,6 +1,6 @@
 'use client';
 
-import type { GpuProfile } from '@llm-local/shared';
+import type { GpuProfile } from '@tadzuna/shared';
 
 interface GpuSelectorProps {
   gpus: GpuProfile[];

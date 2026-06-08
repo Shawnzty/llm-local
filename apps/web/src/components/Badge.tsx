@@ -1,4 +1,4 @@
-import type { ModelTypeBadge } from '@llm-local/shared';
+import type { ModelTypeBadge } from '@tadzuna/shared';
 
 const BADGE_CONFIG: Record<ModelTypeBadge, { label: string; icon: string }> = {
   vision: { label: 'Vision', icon: '👁' },

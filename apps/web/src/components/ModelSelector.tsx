@@ -1,6 +1,6 @@
 'use client';
 
-import type { ModelFamily, ModelVariant } from '@llm-local/shared';
+import type { ModelFamily, ModelVariant } from '@tadzuna/shared';
 
 interface ModelSelectorProps {
   families: ModelFamily[];

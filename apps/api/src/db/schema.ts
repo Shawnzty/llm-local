@@ -7,7 +7,7 @@ import {
   jsonb,
   timestamp,
 } from 'drizzle-orm/pg-core';
-import type { ModelTypeBadge } from '@llm-local/shared';
+import type { ModelTypeBadge } from '@tadzuna/shared';
 
 export const modelFamilies = pgTable('model_families', {
   id: text('id').primaryKey(),

@@ -10,7 +10,7 @@ import {
   checkCompatibility,
   type ModelFamily,
   type GpuProfile,
-} from '@llm-local/shared';
+} from '@tadzuna/shared';
 
 interface CompatibilityClientProps {
   families: ModelFamily[];

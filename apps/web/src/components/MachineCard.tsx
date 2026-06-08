@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import type { Locale, Machine } from '@llm-local/shared';
-import { LOCALE_CURRENCY } from '@llm-local/shared';
+import type { Locale, Machine } from '@tadzuna/shared';
+import { LOCALE_CURRENCY } from '@tadzuna/shared';
 
 interface MachineCardProps {
   machine: Machine;

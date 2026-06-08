@@ -1,4 +1,4 @@
-import { MODEL_FAMILIES, GPU_PROFILES } from '@llm-local/shared';
+import { MODEL_FAMILIES, GPU_PROFILES } from '@tadzuna/shared';
 import { getDb, closeDb } from './client.js';
 import { modelFamilies, modelVariants, gpuProfiles } from './schema.js';
 

@@ -5,7 +5,7 @@ import { routing } from '@/i18n/routing';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import type { Locale } from '@llm-local/shared';
+import type { Locale } from '@tadzuna/shared';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

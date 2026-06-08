@@ -1,4 +1,4 @@
-# LLM Local
+# Tadzuna
 
 Sales-oriented bilingual website for pre-built local LLM inference machines (NVIDIA Tesla V100). Each machine page shows vendor-measured performance and which models it can run.
 
@@ -40,7 +40,7 @@ The machine catalog lives entirely in [`packages/shared/src/data/products.json`]
 - **Localized copy**: translatable fields are `{ "ja": ..., "en": ... }` objects; the UI reads `field[locale]`.
 - **Performance**: `products[].performance[]` rows with `tokensPerSec: null` are hidden until measured.
 - **Shared content** (warranty, PSE note, competitor anchors, GPU-platform note): edit once under `shared.*` / `tiers.*` and it applies everywhere.
-- `brand.supportEmail` is still `(TODO)` — fill it in when the inquiry backend is wired up.
+- `brand.supportEmail` is set to `info@tadzuna.com` (update if the support address changes).
 
 `machines.ts` / `catalog.ts` only re-shape this JSON into typed exports; no catalog data is hardcoded in `.ts`.
 
@@ -96,10 +96,10 @@ pnpm build:api      # typecheck the API
 ## Database (backend)
 
 ```bash
-pnpm --filter @llm-local/api db:generate   # create migration from schema
-pnpm --filter @llm-local/api db:migrate    # apply migrations
-pnpm --filter @llm-local/api db:seed       # seed from bundled data
-pnpm --filter @llm-local/api job:refresh   # run the data refresh job
+pnpm --filter @tadzuna/api db:generate   # create migration from schema
+pnpm --filter @tadzuna/api db:migrate    # apply migrations
+pnpm --filter @tadzuna/api db:seed       # seed from bundled data
+pnpm --filter @tadzuna/api job:refresh   # run the data refresh job
 ```
 
 ## Project structure
@@ -117,7 +117,7 @@ apps/
     src/db/               # Drizzle schema, client, queries, seed
     src/jobs/             # refresh-data.ts cron job
 packages/
-  shared/                 # @llm-local/shared
+  shared/                 # @tadzuna/shared
     src/types.ts          # Domain types
     src/estimation/       # VRAM engine + constants (heart of product)
     src/data/             # Bundled seed data (models, GPUs)
@@ -128,4 +128,4 @@ packages/
 
 - Frontend → Vercel (`apps/web`); set `NEXT_PUBLIC_API_URL` to the Railway API URL
 - Backend → Railway (`apps/api`); attach Postgres, run `db:migrate` + `db:seed` on first deploy, schedule `job:refresh` via Railway cron
-- DNS → Cloudflare (DNS-only records, no proxy): `llm-local.com` → Vercel, `api.llm-local.com` → Railway
+- DNS → Cloudflare (DNS-only records, no proxy): `tadzuna.com` → Vercel, `api.tadzuna.com` → Railway

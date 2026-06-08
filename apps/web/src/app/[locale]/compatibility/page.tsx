@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { CompatibilityClient } from '@/components/CompatibilityClient';
-import { MODEL_FAMILIES, GPU_PROFILES } from '@llm-local/shared';
+import { MODEL_FAMILIES, GPU_PROFILES } from '@tadzuna/shared';
 
 export const revalidate = 3600;
 

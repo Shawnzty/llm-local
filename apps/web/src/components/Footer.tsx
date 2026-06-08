@@ -1,5 +1,5 @@
-import { BRAND } from '@llm-local/shared';
-import type { Locale } from '@llm-local/shared';
+import { BRAND } from '@tadzuna/shared';
+import type { Locale } from '@tadzuna/shared';
 
 export function Footer({ locale }: { locale: Locale }) {
   const year = new Date().getFullYear();
