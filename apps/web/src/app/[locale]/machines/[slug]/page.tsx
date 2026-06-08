@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { MACHINES, LOCALE_CURRENCY, GPU_PLATFORM, PSE_COMPLIANCE } from '@llm-local/shared';
-import type { Locale } from '@llm-local/shared';
+import { MACHINES, LOCALE_CURRENCY, GPU_PLATFORM, PSE_COMPLIANCE } from '@tadzuna/shared';
+import type { Locale } from '@tadzuna/shared';
 
 export function generateStaticParams() {
   return MACHINES.map((m) => ({ slug: m.slug }));

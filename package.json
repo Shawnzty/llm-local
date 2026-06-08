@@ -1,14 +1,14 @@
 {
-  "name": "llm-local",
+  "name": "tadzuna",
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@10.33.0",
   "scripts": {
-    "dev:web": "pnpm --filter @llm-local/web dev",
-    "dev:api": "pnpm --filter @llm-local/api dev",
+    "dev:web": "pnpm --filter @tadzuna/web dev",
+    "dev:api": "pnpm --filter @tadzuna/api dev",
     "build": "pnpm -r build",
-    "build:web": "pnpm --filter @llm-local/web build",
-    "build:api": "pnpm --filter @llm-local/api build",
+    "build:web": "pnpm --filter @tadzuna/web build",
+    "build:api": "pnpm --filter @tadzuna/api build",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint"
   },

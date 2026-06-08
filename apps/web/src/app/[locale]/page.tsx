@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { MACHINES, MARKET_ANCHORS, LOCALE_CURRENCY } from '@llm-local/shared';
-import type { Locale } from '@llm-local/shared';
+import { MACHINES, MARKET_ANCHORS, LOCALE_CURRENCY } from '@tadzuna/shared';
+import type { Locale } from '@tadzuna/shared';
 import { MachineCard } from '@/components/MachineCard';
 
 function formatJPY(n: number, locale: Locale): string {

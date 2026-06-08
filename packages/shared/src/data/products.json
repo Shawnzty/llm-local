@@ -51,14 +51,14 @@
   },
   "brand": {
     "name": {
-      "ja": "LLMローカル",
-      "en": "LLM Local"
+      "ja": "Tadzuna",
+      "en": "Tadzuna"
     },
     "tagline": {
-      "ja": "ローカルLLM推論を、誰でも手の届く価格で。",
-      "en": "Local LLM inference, at a price within everyone's reach."
+      "ja": "AIの手綱を、あなたの手に。",
+      "en": "Take the reins of your AI."
     },
-    "supportEmail": "(TODO)"
+    "supportEmail": "info@tadzuna.com"
   },
   "shared": {
     "warranty": {

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { EstimateClient } from '@/components/EstimateClient';
-import { MODEL_FAMILIES } from '@llm-local/shared';
+import { MODEL_FAMILIES } from '@tadzuna/shared';
 
 export const revalidate = 3600;
 

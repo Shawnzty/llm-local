@@ -95,4 +95,4 @@ Estimation logic is derived from a comprehensive research report analyzing infer
 
 `apps/api/src/jobs/refresh-data.ts` is the scheduled cron that keeps model / GPU metadata up to date in Postgres.
 
-For V1.5, this job re-upserts the bundled seed data from `@llm-local/shared` and bumps `last_updated` timestamps. It exists primarily to prove the Railway cron infrastructure end-to-end. Real upstream fetchers (Ollama catalog, Artificial Analysis leaderboard, NVIDIA spec pages) will replace the placeholder body in a later version — the surrounding schema, fallback behavior, and deployment wiring will not change.
+For V1.5, this job re-upserts the bundled seed data from `@tadzuna/shared` and bumps `last_updated` timestamps. It exists primarily to prove the Railway cron infrastructure end-to-end. Real upstream fetchers (Ollama catalog, Artificial Analysis leaderboard, NVIDIA spec pages) will replace the placeholder body in a later version — the surrounding schema, fallback behavior, and deployment wiring will not change.

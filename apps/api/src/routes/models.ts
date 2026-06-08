@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { MODEL_FAMILIES, getFamilyById } from '@llm-local/shared';
+import { MODEL_FAMILIES, getFamilyById } from '@tadzuna/shared';
 import { readFamiliesFromDb } from '../db/queries.js';
 
 export const models = new Hono();

@@ -1,4 +1,4 @@
-import type { ModelFamily, ModelVariant, GpuProfile, ModelTypeBadge } from '@llm-local/shared';
+import type { ModelFamily, ModelVariant, GpuProfile, ModelTypeBadge } from '@tadzuna/shared';
 import { getDb } from './client.js';
 import { modelFamilies, modelVariants, gpuProfiles } from './schema.js';
 

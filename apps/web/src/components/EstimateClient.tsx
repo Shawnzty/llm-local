@@ -5,7 +5,7 @@ import { ModelSelector } from '@/components/ModelSelector';
 import { ResultCard } from '@/components/ResultCard';
 import { Badge } from '@/components/Badge';
 import { formatGB, formatContext } from '@/lib/utils';
-import { estimateVram, type ModelFamily } from '@llm-local/shared';
+import { estimateVram, type ModelFamily } from '@tadzuna/shared';
 
 interface EstimateClientProps {
   families: ModelFamily[];

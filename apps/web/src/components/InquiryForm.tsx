@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
-import { MACHINES } from '@llm-local/shared';
+import { MACHINES } from '@tadzuna/shared';
 import { useLocale } from 'next-intl';
-import type { Locale } from '@llm-local/shared';
+import type { Locale } from '@tadzuna/shared';
 
 export function InquiryForm() {
   const t = useTranslations('contact');

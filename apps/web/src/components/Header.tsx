@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { BRAND } from '@llm-local/shared';
-import type { Locale } from '@llm-local/shared';
+import { BRAND } from '@tadzuna/shared';
+import type { Locale } from '@tadzuna/shared';
 import { ThemeToggle } from './ThemeToggle';
 import { LocaleSwitcher } from './LocaleSwitcher';
 

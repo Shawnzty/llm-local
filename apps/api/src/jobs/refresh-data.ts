@@ -10,7 +10,7 @@
  *
  * See ASSUMPTIONS.md for details.
  */
-import { MODEL_FAMILIES, GPU_PROFILES } from '@llm-local/shared';
+import { MODEL_FAMILIES, GPU_PROFILES } from '@tadzuna/shared';
 import { getDb, closeDb } from '../db/client.js';
 import { modelFamilies, modelVariants, gpuProfiles } from '../db/schema.js';
 
