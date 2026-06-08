@@ -23,8 +23,12 @@ export function InquiryForm() {
   });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // Read the honeypot synchronously before any await (currentTarget is
+    // nulled after the handler returns). Bots fill it; humans never see it.
+    const honey =
+      (e.currentTarget.elements.namedItem('_honey') as HTMLInputElement | null)?.value ?? '';
     setStatus('sending');
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -32,7 +36,7 @@ export function InquiryForm() {
       const res = await fetch(`${apiUrl}/inquiries`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, locale }),
+        body: JSON.stringify({ ...form, locale, _honey: honey }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus('success');

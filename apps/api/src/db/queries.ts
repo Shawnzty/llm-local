@@ -1,6 +1,7 @@
 import type { ModelFamily, ModelVariant, GpuProfile, ModelTypeBadge } from '@tadzuna/shared';
 import { getDb } from './client.js';
-import { modelFamilies, modelVariants, gpuProfiles } from './schema.js';
+import { modelFamilies, modelVariants, gpuProfiles, inquiries } from './schema.js';
+import type { InquiryInput } from '../lib/email.js';
 
 export async function readFamiliesFromDb(): Promise<ModelFamily[] | null> {
   if (!process.env.DATABASE_URL) return null;
@@ -49,5 +50,24 @@ export async function readGpusFromDb(): Promise<GpuProfile[] | null> {
     vramGB: g.vramGB,
     tier: g.tier as GpuProfile['tier'],
   }));
+}
+
+/**
+ * Persist an inquiry. Best-effort: returns false (no-op) when DATABASE_URL is
+ * unset so the caller can still deliver the lead by email without a database.
+ */
+export async function saveInquiry(input: InquiryInput): Promise<boolean> {
+  if (!process.env.DATABASE_URL) return false;
+  const db = getDb();
+  await db.insert(inquiries).values({
+    name: input.name,
+    email: input.email,
+    phone: input.phone ?? null,
+    company: input.company ?? null,
+    machineId: input.machineId ?? null,
+    message: input.message,
+    locale: input.locale ?? null,
+  });
+  return true;
 }
 
