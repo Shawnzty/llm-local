@@ -40,7 +40,7 @@ export function ModelSelector({
           className="w-full h-11 px-4 rounded-xl border border-gray-200 dark:border-gray-700
             bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100
             text-[15px] appearance-none cursor-pointer
-            focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500
+            focus:outline-none focus:ring-2 focus:ring-leather/40 focus:border-leather
             transition-all duration-150"
         >
           <option value="">Select model family</option>
@@ -68,7 +68,7 @@ export function ModelSelector({
             bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100
             text-[15px] appearance-none cursor-pointer
             disabled:opacity-40 disabled:cursor-not-allowed
-            focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500
+            focus:outline-none focus:ring-2 focus:ring-leather/40 focus:border-leather
             transition-all duration-150"
         >
           <option value="">

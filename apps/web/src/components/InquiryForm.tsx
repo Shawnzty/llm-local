@@ -54,7 +54,7 @@ export function InquiryForm() {
   }
 
   const inputClass =
-    'w-full h-11 px-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 text-[15px] focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition-all duration-150';
+    'w-full h-11 px-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 text-[15px] focus:outline-none focus:ring-2 focus:ring-leather/40 focus:border-leather transition-all duration-150';
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -149,7 +149,7 @@ export function InquiryForm() {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full h-11 rounded-xl bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
+        className="w-full h-11 rounded-xl bg-leather text-[#FBF4EC] text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
       >
         {status === 'sending' ? t('sending') : t('submit')}
       </button>

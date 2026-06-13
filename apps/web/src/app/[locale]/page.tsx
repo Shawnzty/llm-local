@@ -37,7 +37,7 @@ export default async function HomePage({
           <div className="mt-8">
             <Link
               href={`/${locale}/machines`}
-              className="inline-flex items-center px-6 py-3 rounded-xl bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm font-medium hover:opacity-90 transition-opacity"
+              className="inline-flex items-center px-6 py-3 rounded-xl bg-leather text-[#FBF4EC] text-sm font-medium hover:opacity-90 transition-opacity"
             >
               {t('hero.cta')}
             </Link>
@@ -80,7 +80,7 @@ export default async function HomePage({
               </thead>
               <tbody>
                 {/* Our lineup highlighted */}
-                <tr className="border-b border-gray-100 dark:border-gray-800/50 bg-blue-50/50 dark:bg-blue-950/20">
+                <tr className="border-b border-gray-100 dark:border-gray-800/50 bg-leather/10 dark:bg-leather/15">
                   <td className="py-3 px-4 font-semibold text-gray-900 dark:text-gray-100">
                     {t('comparison.ourLineup')}
                   </td>

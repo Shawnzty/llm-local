@@ -17,7 +17,7 @@ export function MachineCard({ machine, locale }: MachineCardProps) {
         <div className="flex-1">
           <div className="flex items-baseline justify-between gap-2 mb-1">
             <h3 className="font-semibold text-gray-900 dark:text-gray-100">{machine.name}</h3>
-            <span className="shrink-0 text-xs font-medium text-blue-600 dark:text-blue-400 tabular-nums">
+            <span className="shrink-0 text-xs font-medium text-leather dark:text-leather-light tabular-nums">
               {machine.vramGB}GB VRAM
             </span>
           </div>

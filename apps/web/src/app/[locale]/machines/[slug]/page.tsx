@@ -78,7 +78,7 @@ export default async function MachineDetailPage({
           </span>
           <Link
             href={inquireHref}
-            className="inline-flex items-center px-5 py-2 rounded-xl bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center px-5 py-2 rounded-xl bg-leather text-[#FBF4EC] text-sm font-medium hover:opacity-90 transition-opacity"
           >
             {t('inquire')}
           </Link>
@@ -201,7 +201,7 @@ export default async function MachineDetailPage({
       <div className="text-center">
         <Link
           href={inquireHref}
-          className="inline-flex items-center px-6 py-3 rounded-xl bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm font-medium hover:opacity-90 transition-opacity"
+          className="inline-flex items-center px-6 py-3 rounded-xl bg-leather text-[#FBF4EC] text-sm font-medium hover:opacity-90 transition-opacity"
         >
           {t('inquire')}
         </Link>

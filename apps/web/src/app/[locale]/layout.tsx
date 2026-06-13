@@ -6,6 +6,19 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import type { Locale } from '@tadzuna/shared';
+import { Quicksand, Inter } from 'next/font/google';
+
+const quicksand = Quicksand({
+  subsets: ['latin'],
+  weight: ['500', '600'],
+  variable: '--font-quicksand',
+  display: 'swap',
+});
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -27,7 +40,7 @@ export default async function LocaleLayout({
   const messages = (await import(`../../../messages/${locale}.json`)).default;
 
   return (
-    <html lang={locale} className="h-full" suppressHydrationWarning>
+    <html lang={locale} className={`h-full ${quicksand.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{

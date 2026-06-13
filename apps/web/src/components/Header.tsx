@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { BRAND } from '@tadzuna/shared';
 import type { Locale } from '@tadzuna/shared';
+import { LogoLockup } from './Logo';
 import { ThemeToggle } from './ThemeToggle';
 import { LocaleSwitcher } from './LocaleSwitcher';
 
@@ -17,9 +17,9 @@ export function Header() {
         <div className="flex items-center gap-6">
           <Link
             href={`/${locale}`}
-            className="text-[15px] font-semibold tracking-tight text-gray-900 dark:text-gray-100 hover:opacity-70 transition-opacity"
+            className="text-ink dark:text-gray-100 hover:opacity-70 transition-opacity"
           >
-            {BRAND.name[locale]}
+            <LogoLockup />
           </Link>
           <nav className="hidden sm:flex items-center gap-4">
             <Link

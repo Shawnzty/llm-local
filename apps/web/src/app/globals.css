@@ -2,9 +2,22 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-ink: #101010;
+  --color-leather: #7A4E2A;
+  --color-leather-light: #C79A6A;
+}
+
+:root {
+  --logo-leather: #7A4E2A;
+}
+.dark {
+  --logo-leather: #C79A6A;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
-    'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont,
+    'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Yu Gothic UI', Meiryo, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
