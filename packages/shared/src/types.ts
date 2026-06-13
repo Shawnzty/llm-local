@@ -98,7 +98,7 @@ export interface Machine {
   tier: Tier;
   featured: boolean;
   status: 'active' | 'inactive';
-  name: string; // short model code, not translated (e.g. "V100 64G Plus")
+  name: string; // short model code, not translated (e.g. "Tadzuna 64GB Plus")
   category: LocalizedText;
   tagline: LocalizedText;
   prices: Record<Currency, number>;
