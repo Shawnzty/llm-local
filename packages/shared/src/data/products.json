@@ -16,7 +16,7 @@
     "fieldNotes": {
       "performance.tokensPerSec": "メーカー(中国卖家)参考値。null=未計測(⑨⑩⑪)。要実測。",
       "tier": "entry(③④)/mid(⑤⑥⑦⑧)/flagship(⑨⑩⑪)",
-      "name": "短い型番(通用コード、翻訳なし)。例: V100 64G Plus。",
+      "name": "短い型番(通用コード、翻訳なし)。例: Tadzuna 64GB Plus。",
       "category": "商品タイプ(翻訳あり {ja,en})。ワークステーション / サーバー。"
     }
   },
@@ -170,11 +170,11 @@
       "id": "sku-03",
       "rank": 3,
       "label": "③",
-      "slug": "v100-dual-32g",
+      "slug": "tadzuna-32gb",
       "tier": "entry",
       "featured": false,
       "status": "active",
-      "name": "V100 32G",
+      "name": "Tadzuna 32GB",
       "category": {
         "ja": "ローカルLLM推論ワークステーション",
         "en": "Local LLM Inference Workstation"
@@ -284,11 +284,11 @@
         "en": "1-year whole-unit warranty + dedicated GPU warranty"
       },
       "images": {
-        "hero": "/images/products/v100-dual-32g/hero.webp",
-        "thumbnail": "/images/products/v100-dual-32g/thumb.webp",
+        "hero": "/images/products/tadzuna-32gb/hero.webp",
+        "thumbnail": "/images/products/tadzuna-32gb/thumb.webp",
         "gallery": [
-          "/images/products/v100-dual-32g/01.webp",
-          "/images/products/v100-dual-32g/02.webp"
+          "/images/products/tadzuna-32gb/01.webp",
+          "/images/products/tadzuna-32gb/02.webp"
         ]
       },
       "disclaimers": [
@@ -306,11 +306,11 @@
       "id": "sku-04",
       "rank": 4,
       "label": "④",
-      "slug": "v100-triple-48g",
+      "slug": "tadzuna-48gb",
       "tier": "entry",
       "featured": false,
       "status": "active",
-      "name": "V100 48G",
+      "name": "Tadzuna 48GB",
       "category": {
         "ja": "ローカルLLM推論ワークステーション",
         "en": "Local LLM Inference Workstation"
@@ -417,11 +417,11 @@
         "en": "1-year whole-unit warranty + dedicated GPU warranty"
       },
       "images": {
-        "hero": "/images/products/v100-triple-48g/hero.webp",
-        "thumbnail": "/images/products/v100-triple-48g/thumb.webp",
+        "hero": "/images/products/tadzuna-48gb/hero.webp",
+        "thumbnail": "/images/products/tadzuna-48gb/thumb.webp",
         "gallery": [
-          "/images/products/v100-triple-48g/01.webp",
-          "/images/products/v100-triple-48g/02.webp"
+          "/images/products/tadzuna-48gb/01.webp",
+          "/images/products/tadzuna-48gb/02.webp"
         ]
       },
       "disclaimers": [
@@ -439,11 +439,11 @@
       "id": "sku-05",
       "rank": 5,
       "label": "⑤",
-      "slug": "v100-64g",
+      "slug": "tadzuna-64gb",
       "tier": "mid",
       "featured": false,
       "status": "active",
-      "name": "V100 64G",
+      "name": "Tadzuna 64GB",
       "category": {
         "ja": "ローカルLLM推論ワークステーション",
         "en": "Local LLM Inference Workstation"
@@ -550,11 +550,11 @@
         "en": "1-year whole-unit warranty + dedicated GPU warranty"
       },
       "images": {
-        "hero": "/images/products/v100-64g/hero.webp",
-        "thumbnail": "/images/products/v100-64g/thumb.webp",
+        "hero": "/images/products/tadzuna-64gb/hero.webp",
+        "thumbnail": "/images/products/tadzuna-64gb/thumb.webp",
         "gallery": [
-          "/images/products/v100-64g/01.webp",
-          "/images/products/v100-64g/02.webp"
+          "/images/products/tadzuna-64gb/01.webp",
+          "/images/products/tadzuna-64gb/02.webp"
         ]
       },
       "disclaimers": [
@@ -572,11 +572,11 @@
       "id": "sku-06",
       "rank": 6,
       "label": "⑥",
-      "slug": "v100-64g-highmem",
+      "slug": "tadzuna-64gb-plus",
       "tier": "mid",
       "featured": false,
       "status": "active",
-      "name": "V100 64G Plus",
+      "name": "Tadzuna 64GB Plus",
       "category": {
         "ja": "ローカルLLM推論ワークステーション",
         "en": "Local LLM Inference Workstation"
@@ -685,11 +685,11 @@
         "en": "1-year whole-unit warranty + dedicated GPU warranty"
       },
       "images": {
-        "hero": "/images/products/v100-64g-highmem/hero.webp",
-        "thumbnail": "/images/products/v100-64g-highmem/thumb.webp",
+        "hero": "/images/products/tadzuna-64gb-plus/hero.webp",
+        "thumbnail": "/images/products/tadzuna-64gb-plus/thumb.webp",
         "gallery": [
-          "/images/products/v100-64g-highmem/01.webp",
-          "/images/products/v100-64g-highmem/02.webp"
+          "/images/products/tadzuna-64gb-plus/01.webp",
+          "/images/products/tadzuna-64gb-plus/02.webp"
         ]
       },
       "disclaimers": [
@@ -707,11 +707,11 @@
       "id": "sku-07",
       "rank": 7,
       "label": "⑦",
-      "slug": "v100-80g",
+      "slug": "tadzuna-80gb",
       "tier": "mid",
       "featured": true,
       "status": "active",
-      "name": "V100 80G",
+      "name": "Tadzuna 80GB",
       "category": {
         "ja": "ローカルLLM推論ワークステーション",
         "en": "Local LLM Inference Workstation"
@@ -822,11 +822,11 @@
         "en": "1-year whole-unit warranty + dedicated GPU warranty"
       },
       "images": {
-        "hero": "/images/products/v100-80g/hero.webp",
-        "thumbnail": "/images/products/v100-80g/thumb.webp",
+        "hero": "/images/products/tadzuna-80gb/hero.webp",
+        "thumbnail": "/images/products/tadzuna-80gb/thumb.webp",
         "gallery": [
-          "/images/products/v100-80g/01.webp",
-          "/images/products/v100-80g/02.webp"
+          "/images/products/tadzuna-80gb/01.webp",
+          "/images/products/tadzuna-80gb/02.webp"
         ]
       },
       "disclaimers": [
@@ -844,11 +844,11 @@
       "id": "sku-08",
       "rank": 8,
       "label": "⑧",
-      "slug": "v100-96g",
+      "slug": "tadzuna-96gb",
       "tier": "mid",
       "featured": true,
       "status": "active",
-      "name": "V100 96G",
+      "name": "Tadzuna 96GB",
       "category": {
         "ja": "ローカルLLM推論ワークステーション",
         "en": "Local LLM Inference Workstation"
@@ -955,11 +955,11 @@
         "en": "1-year whole-unit warranty + dedicated GPU warranty"
       },
       "images": {
-        "hero": "/images/products/v100-96g/hero.webp",
-        "thumbnail": "/images/products/v100-96g/thumb.webp",
+        "hero": "/images/products/tadzuna-96gb/hero.webp",
+        "thumbnail": "/images/products/tadzuna-96gb/thumb.webp",
         "gallery": [
-          "/images/products/v100-96g/01.webp",
-          "/images/products/v100-96g/02.webp"
+          "/images/products/tadzuna-96gb/01.webp",
+          "/images/products/tadzuna-96gb/02.webp"
         ]
       },
       "disclaimers": [
@@ -977,11 +977,11 @@
       "id": "sku-09",
       "rank": 9,
       "label": "⑨",
-      "slug": "epyc-4gpu-128g-entry",
+      "slug": "tadzuna-128gb",
       "tier": "flagship",
       "featured": true,
       "status": "active",
-      "name": "V100 128G",
+      "name": "Tadzuna 128GB",
       "category": {
         "ja": "ローカルLLM推論サーバー",
         "en": "Local LLM Inference Server"
@@ -1100,11 +1100,11 @@
         "en": "1-year whole-unit warranty + dedicated GPU warranty"
       },
       "images": {
-        "hero": "/images/products/epyc-4gpu-128g-entry/hero.webp",
-        "thumbnail": "/images/products/epyc-4gpu-128g-entry/thumb.webp",
+        "hero": "/images/products/tadzuna-128gb/hero.webp",
+        "thumbnail": "/images/products/tadzuna-128gb/thumb.webp",
         "gallery": [
-          "/images/products/epyc-4gpu-128g-entry/01.webp",
-          "/images/products/epyc-4gpu-128g-entry/02.webp"
+          "/images/products/tadzuna-128gb/01.webp",
+          "/images/products/tadzuna-128gb/02.webp"
         ]
       },
       "disclaimers": [
@@ -1122,11 +1122,11 @@
       "id": "sku-10",
       "rank": 10,
       "label": "⑩",
-      "slug": "epyc-4gpu-128g-plus",
+      "slug": "tadzuna-128gb-plus",
       "tier": "flagship",
       "featured": false,
       "status": "active",
-      "name": "V100 128G Plus",
+      "name": "Tadzuna 128GB Plus",
       "category": {
         "ja": "ローカルLLM推論サーバー",
         "en": "Local LLM Inference Server"
@@ -1243,11 +1243,11 @@
         "en": "1-year whole-unit warranty + dedicated GPU warranty"
       },
       "images": {
-        "hero": "/images/products/epyc-4gpu-128g-plus/hero.webp",
-        "thumbnail": "/images/products/epyc-4gpu-128g-plus/thumb.webp",
+        "hero": "/images/products/tadzuna-128gb-plus/hero.webp",
+        "thumbnail": "/images/products/tadzuna-128gb-plus/thumb.webp",
         "gallery": [
-          "/images/products/epyc-4gpu-128g-plus/01.webp",
-          "/images/products/epyc-4gpu-128g-plus/02.webp"
+          "/images/products/tadzuna-128gb-plus/01.webp",
+          "/images/products/tadzuna-128gb-plus/02.webp"
         ]
       },
       "disclaimers": [
@@ -1265,11 +1265,11 @@
       "id": "sku-11",
       "rank": 11,
       "label": "⑪",
-      "slug": "epyc-4gpu-128g-max",
+      "slug": "tadzuna-128gb-max",
       "tier": "flagship",
       "featured": true,
       "status": "active",
-      "name": "V100 128G Max",
+      "name": "Tadzuna 128GB Max",
       "category": {
         "ja": "ローカルLLM推論サーバー",
         "en": "Local LLM Inference Server"
@@ -1390,11 +1390,11 @@
         "en": "1-year whole-unit warranty + dedicated GPU warranty"
       },
       "images": {
-        "hero": "/images/products/epyc-4gpu-128g-max/hero.webp",
-        "thumbnail": "/images/products/epyc-4gpu-128g-max/thumb.webp",
+        "hero": "/images/products/tadzuna-128gb-max/hero.webp",
+        "thumbnail": "/images/products/tadzuna-128gb-max/thumb.webp",
         "gallery": [
-          "/images/products/epyc-4gpu-128g-max/01.webp",
-          "/images/products/epyc-4gpu-128g-max/02.webp"
+          "/images/products/tadzuna-128gb-max/01.webp",
+          "/images/products/tadzuna-128gb-max/02.webp"
         ]
       },
       "disclaimers": [
